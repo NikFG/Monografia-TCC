@@ -1,0 +1,278 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%   Template para monografia de TCC-2022 - versao 1.0.alfa
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%% Este template utiliza o modelo mantido pela abnt e foi baseado 
+%% no abtex2-modelo-trabalho-academico.tex, v-1.9.6 laurocesar
+%% Copyright 2012-2016 by abnTeX2 group at http://www.abntex.net.br/ 
+%%
+% -------------------------------------------------------------------
+%% This work may be distributed and/or modified under the conditions 
+%% of the LaTeX Project Public License, either version 1.3 of this 
+%% license or (at your option) any later version. The latest version 
+%% of this license is in http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 2005/12/01 or later.
+%%
+%% This work has the LPPL maintenance status `maintained'.
+%% 
+%% The Current Maintainer of this work is the abnTeX2 team, led
+%% by Lauro César Araujo. Further information are available on 
+%% http://www.abntex.net.br/
+%%
+%% This work consists of the files abntex2-modelo-trabalho-academico.tex,
+%% abntex2-modelo-include-comandos and abntex2-modelo-references.bib
+% -------------------------------------------------------------------
+%%
+%% Modelo de Monografia em conformidade com ABNT NBR 14724:2011
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%% ATENÇAO para as opções:
+%%
+%% para modo rascunho, sem páginas brancas, use: 
+%% openany, oneside, nopartblankpage
+%%
+%% para modo normal, com tudo que ABNT exige, use:  
+%% openright, twoside, partpageblank
+%%
+
+\documentclass[
+	% -- opções da classe memoir --
+	12pt,			% tamanho da fonte
+	openany,		% capítulos começam em qq página (isso elimina várias pág brancas)
+	%openright,		% capítulos começam em pág ímpar (insere página vazia caso preciso)
+	oneside,		% considera impressão de um só lado (gera menos pág brancas)
+	%twoside,		% para impressão em recto e verso. Oposto a oneside
+	a4paper,		% tamanho do papel. 
+	% -- opções da classe abntex2 --
+	%chapter=TITLE,		% títulos de capítulos convertidos em letras maiúsculas
+	%section=TITLE,		% títulos de seções convertidos em letras maiúsculas
+	%subsection=TITLE,	% títulos de subseções convertidos em letras maiúsculas
+	%subsubsection=TITLE,% títulos de subsubseções convertidos em letras maiúsculas
+	% -- opções do pacote babel --
+	english,		% idioma adicional para hifenização
+	%french,		% idioma adicional para hifenização
+	%spanish,		% idioma adicional para hifenização
+	%portuges		% o último idioma é o principal do documento
+	brazil			% o último idioma é o principal do documento
+	]{abntex2}
+
+
+\input{monografia-preludio.tex}	
+
+\graphicspath{{./figuras/}}   	% pasta contendo todas as figuras
+
+\nopartblankpage  		% elimina páginas em branco
+% \partpageblank		% permite páginas em branco
+
+% PACOTES
+\usepackage{outlines}
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lastpage}
+\usepackage{pgfplots}
+\usepackage{indentfirst}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{microtype}
+\renewcommand\thesection{\arabic{section}}
+\usepackage[brazilian,hyperpageref]{backref}
+\usepackage[alf]{abntex2cite}
+\usepackage{float}
+
+% ----------------------------------------------------
+% Informações de dados para CAPA e FOLHA DE ROSTO
+% ----------------------------------------------------
+
+\titulo{Protótipo de uma aplicação web para gestão de eventos online}
+\autor{Nikollas Ferreira Gonçalves}
+\local{Formiga - MG}
+\data{2022}
+\orientador{Ms. Roger Santos Ferreira}
+\coorientador{Dr. Manoel Pereira Júnior}
+\instituicao{%
+  Instituto Federal de Educação, Ciência e Tecnologia de Minas Gerais \par
+  Campus Formiga \par
+  Ciência da Computação
+  }
+\tipotrabalho{Monografia}
+% O preambulo deve conter o tipo do trabalho, o objetivo, o nome da instituição e a área de concentração 
+\preambulo{Monografia do trabalho de conclusão de curso apresentado ao Instituto 
+    Federal Minas Gerais - Campus Formiga, como requisito parcial para a obtenção 
+    do título de Bacharel em Ciência da Computação.}
+
+% ----------------------------------------------------
+% INÍCIO DO DOCUMENTO
+% ----------------------------------------------------
+
+\begin{document}
+
+%\selectlanguage{portugues}
+\selectlanguage{brazil}
+
+\frenchspacing  % retira espaço extra obsoleto entre as frases.
+
+%-----------------------------------------------------
+% ELEMENTOS PRÉ-TEXTUAIS
+%-----------------------------------------------------
+% \pretextual
+
+\imprimircapa
+
+\imprimirfolhaderosto*  % o comando com * indica que haverá ficha bibliográfica
+
+%------------- Ficha catalográfica
+% São os ``Dados internacionais de catalogação-na-publicação''.
+% Escolha uma das opções: usar página pdf pronta (gerada pela biblioteca!!!)
+% ou gerar a página com o comando \imprimirfichacatalografica. 
+% (Mais detalhes no preludio e documentacao do pacote abntex2.)
+%
+ \begin{fichacatalografica}
+     %\includepdf{ficha_catalografica.pdf}
+ \end{fichacatalografica}
+%\includepdf{anexos/ficha.pdf} %use esta linha quando tiver o PDF com a ficha catalográfica gerada pela biblioteca
+
+%------------ Errata (se houver)
+% Modifique o comando \imprimirerrata no preludio e use esse comando
+%\imprimirerrata
+
+%------------ Folha de aprovação
+% É um elemento obrigatório da NBR 14724/2011 (seção 4.2.1.3). 
+% Você pode utilizar a página modelo até a aprovação do trabalho. 
+% Após isso, gere uma página com a imagem da folha assinada pela banca,
+% comente o comando \imprimirfolhadeaprovacao e use o \includepdf
+% \includepdf{folhadeaprovacao_final.pdf}
+\newpage
+%------------ Dedicatória
+\begin{dedicatoria}
+   \vspace*{\fill} \centering \noindent 
+   \textit{Dedico este trabalho .....} 
+   \vspace*{\fill}
+\end{dedicatoria}
+
+%------------ Agradecimentos
+\begin{agradecimentos}
+Agradeço .....
+\end{agradecimentos}
+
+%------------ Epígrafe
+\begin{epigrafe}
+   \vspace*{\fill}
+   \begin{flushright}
+	\textit{\aspas{Frase inspiradora} \\
+	(Autor) }
+   \end{flushright}
+\end{epigrafe}
+
+%------------ RESUMOS
+\setlength{\absparsep}{18pt} % ajusta o espaçamento dos parágrafos do resumo
+
+% resumo em português
+\begin{resumo}
+Com o aumento da demanda por eventos online nos últimos anos, foram necessários adotar métodos que antes não eram utilizados, como aplicações gerenciadoras de eventos. O presente trabalho apresenta um protótipo de uma aplicação web que irá gerir os eventos de maneira simples, utilizando-se de frameworks modernos, que são o Next.js para o desenvolvimento do front-end e o Laravel para o back-end, tornando-se assim cada servidor com sua responsabilidade. Ao terem duas máquinas distintas operando, sendo divididas logicamente, que é a distribuição vertical, melhorando o gerenciamento de suas arquiteturas. Com todos estes recursos e seu planejamento com a metodologia unificada, o protótipo final apresenta a implementação das tecnologias citadas, além de exemplificar o uso dos conceitos almejados no desenvolvimento de aplicações web atualmente: design responsivo, fluído, tendo um foco na User Interface e User Experiencie, além de demonstrar a divisão de responsabilidades entre as camadas de software por meio do padrão de desenvolvimento MVC e programação reativa.
+
+\textbf{Palavras-chave}: Laravel, Gerenciamento de eventos, Next.js
+\end{resumo}
+
+% resumo em inglês
+\begin{resumo}[Abstract]
+\begin{otherlanguage*}{english}
+Given the demand increasefor online events in recent years, methods that were not used before were necessary, such as event management applications. That said, it was thought to develop a web application that manages events in a simple way, using modern frameworks with the MySQL DBMS. These are Next.js for the front-end development and Laravel for the back-end, making each server responsible by it self, given their vertical distribution. Therefore, with all these resources and their planning with a unified methodology, it was possible to create a responsive, fluid and thoughtful web application from the end user's point of view.
+
+\textbf{Keywords}: Laravel, Event management, Next.js
+\end{otherlanguage*}
+\end{resumo}
+ 
+
+
+% Consulte o manual da classe abntex2 para maiores 
+% orientações sobre os seguintes tópicos:
+
+%------------ Lista de ilustrações
+\pdfbookmark[0]{\listfigurename}{lof}
+\listoffigures*
+\cleardoublepage
+
+%------------ Lista de tabelas
+\pdfbookmark[1]{Lista de tabelas}{lof}
+\listoftables*
+\cleardoublepage
+
+%------------ Lista de códigos
+%\pdfbookmark[2]{Lista de códigos}{lof}
+%\addcontentsline{toc}{chapter}{\lstlistlistingname}
+%\newlistof{lstlistoflistings}{lol}{\lstlistlistingname}
+%\lstlistoflistings*
+\cleardoublepage
+
+
+%------------ Lista de abreviaturas e siglas
+\begin{siglas}
+    \item[HTML] \textit{Hyper Text Markup Language}
+    \item[CSS]  \textit{Cascade Style Sheet}
+    \item[JS]   \textit{JavaScript}
+    \item[TS]   \textit{TypeScript}
+    \item[PHP]  \textit{PHP: Hypertext Preprocessor}
+    \item[JSON] \textit{JavaScript Object Notation}
+    \item[JWT]  \textit{JSON Web Token}
+    \item[ORM]  \textit{Object Relational Mapper}
+    \item[SQL]  \textit{Structured Query Language}
+    \item[API] \textit{Application Programming Interface}
+    \item[SGBD] \textit{Sistema Gerenciador de Banco de Dados}
+\end{siglas}
+%------------ Lista de símbolos
+
+%------------ Sumario
+\pdfbookmark[0]{\contentsname}{toc}
+\tableofcontents*
+\cleardoublepage
+
+% ----------------------------------------------------------
+% ELEMENTOS TEXTUAIS
+% ----------------------------------------------------------
+\textual
+
+%inclua outros capítulos de acordo com a orientação do seu professor
+\include{capitulos/introducao}
+\include{capitulos/fundamentacao-teorica}
+\include{capitulos/materiais}
+\include{capitulos/desenvolvimento}
+\include{capitulos/resultados}
+\include{capitulos/conclusao}
+
+\phantompart
+
+% ----------------------------------------------------------
+% ELEMENTOS PÓS-TEXTUAIS
+% ----------------------------------------------------------
+\postextual
+
+% Referências bibliográficas
+\bibliography{monografia.bib} %nome do arquivo *.bib
+% Consulte o manual da classe abntex2 para orientações 
+% sobre os seguintes tópicos opcionais:
+
+%------------ Glossário
+
+%------------ Apêndices
+\begin{apendicesenv}
+	\partapendices
+	%\input{apendices/arquivo.tex}
+\end{apendicesenv}
+
+%------------ Anexos
+\begin{anexosenv}
+	\partanexos
+	%\input{anexos/arquivo.tex}
+\end{anexosenv}
+
+% INDICE REMISSIVO
+\phantompart
+\printindex
+
+\end{document}
+\grid

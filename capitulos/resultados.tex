@@ -1,0 +1,51 @@
+% -----------------------------------------
+\chapter{Resultados}\label{chp:LABEL_CHP_5}
+\label{resultados}
+% -----------------------------------------
+Com a utilização de frameworks modernos, foi possível criar uma aplicação web responsiva, fluida e pensada na visão do usuário final. Ao se comparar com o estado inicial, o mockup seguiu seu propósito e com base nele, foi possível a criação de todas as telas do sistema. A figura \ref{home} demonstra a tela inicial, que todas as pessoas irão visualizar ao entrar na aplicação. Comparada ao mockup, há uma maior riqueza de detalhes, assim como melhorias que puderam ser ajustadas. Seguindo para as telas de cadastro, como a de Login na figura \ref{login}, o fundo foi levemente alterado em sua paleta para corresponder ao que foi gerado anteriormente. \\
+\begin{figure}[h]
+    \caption{\label{home}Página inicial}
+    \vspace{5pt}
+    \centering
+    \includegraphics[scale=.23]{home.png}
+    \vspace{5pt}
+    \legend{Fonte: Próprio autor}
+\end{figure}
+\begin{figure}[h]
+    \caption{\label{login}Página de login}
+    \vspace{5pt}
+    \centering
+    \includegraphics[scale=.25]{login.png}
+    \vspace{5pt}
+    \legend{Fonte: Próprio autor}
+\end{figure}
+Dada a exibição da tela inicial, foi criada uma exibição padrão para cada evento, seguindo o modelo de mockup. Com isto, a aplicação segue um modelo padrão para cada evento, modificando apenas as informações juntamente com as imagens contidas em cada um. Na figura \ref{evento}, é possível ver o detalhamento do evento em si e, juntamente com a figura \ref{atividades} (que estão na mesma página), tem-se completamente os dados para a participação do usuário, juntamente com a descrição completa de quem e o que será apresentado no evento. \\
+\begin{figure}[h]
+    \caption{\label{evento}Evento}
+    \vspace{5pt}
+    \centering
+    \includegraphics[scale=.23]{evento.png}
+    \vspace{5pt}
+    \legend{Fonte: Próprio autor}
+\end{figure}
+\begin{figure}[h]
+    \caption{\label{atividades}Atividades}
+    \vspace{5pt}
+    \centering
+    \includegraphics[scale=.25]{atividades.png}
+    \vspace{5pt}
+    \legend{Fonte: Próprio autor}
+\end{figure}
+%Seguindo para a tela de usuário, a qual será utilizada para gerenciamento de certificados, assim como de eventos, conforme previsto no mockup inicial, apenas alguns detalhes foram ajustados, como ajustes em alguns efeitos visuais de componentes da tela. Então, o que se altera são a quantidade de opções para cada uma das funções descritas anteriormente, como mostram a figura 21, figura 22 e a figura 23, sendo a primeira de um usuário comum, a segunda de um associado e a última de um administrador.\\
+O modelo de certificado criado e que pode ser enviado em formato de pdf para o email do participante, incluindo neste caso o apresentador também, também é gerido pela aplicação. Então, foi necessário criar um validador e enviar juntamente ao pdf o código para validação, como demonstrado na figura \ref{certificado}.\\
+\begin{figure}[h]
+    \caption{\label{certificado}Exemplo de certificado}
+    \vspace{5pt}
+    \centering
+    \includegraphics[scale=.25]{certificado.png}
+    \vspace{5pt}
+    \legend{Fonte: Próprio autor}
+\end{figure}
+Além do front-end, era esperada a criação de um back-end, que foi realizada, apresentando um token JWT para autenticação e validação dos dados do usuário, além de realizar toda a troca de informações por meio de sua API REST e envio de e-mails dos certificados. Neste, é proporcionado um ambiente e troca de informações seguros por meio das requisições feitas pelo Next.js. Além disso, toda a estruturação inicial planejada foi seguida, com exceções de tabelas auxiliares criadas pelo próprio framework Laravel para facilitar gravações de suas estatísticas e informações essenciais ele, ou seja, toda a cardinalidade das tabelas, assim como o projeto das requisições foi seguido conforme planejado anteriormente.\\
+Por se tratar de um framework bem estruturado e organizado, com o Laravel, foi possível criar um padrão para o projeto que apresente funções bem determinadas e cumprindo o requisito de estarem em seu local, como os Controllers tendo as funções de comunicação com o banco de dados, assim como o retorno da requisição por meio de uma resposta em JSON, e as rotas chamando cada uma dessas funções para serem executadas. Portanto, isto facilitou o desenvolvimento, criando-se um padrão pré-determinado e podendo ser expandido ainda mais para projetos em maiores escalas.\\
+Neste capítulo, foram apresentados os resultados do protótipo desenvolvido. A aplicação é capaz do gerenciamento de eventos, criação e edição dos usuários, assim como geração e validação dos certificados. Pode-se agregar diversas outras funcionalidades a este projeto, dado os frameworks e linguagens utilizados, sendo um protótipo que pode ser viabilizado e implementado em diversas instituições para seu uso no gerenciamento destas tarefas.
