@@ -11,7 +11,58 @@ Para que isso seja planejado em uma aplicação e utilizada corretamente, de aco
     “Modelos de contexto do sistema e modelos de interação apresentam visões complementares dos relacionamentos entre um sistema e seu ambiente.”
 \end{quote} 
 \subsection{Caso de uso}
-Segundo \citeonline{PRESSMAN}, a UML é uma linguagem padrão para descrever e documentar um projeto de software que reúne diversos grupos de notações de modelagem, sendo cada um com sua devida sintaxe e semântica predeterminadas. Cada um desses elementos pode ser extensível, permitindo, deste modo, que sejam adaptáveis às características específicas do projeto a ser desenvolvido.
- \cite{PRESSMAN}
+Segundo \citeonline{PRESSMAN}, a UML é uma linguagem padrão para descrever e documentar um projeto de software que reúne diversos grupos de notações de modelagem, sendo cada um com sua devida sintaxe e semântica predeterminadas. Cada um desses elementos pode ser extensível, permitindo, deste modo, que sejam adaptáveis às características específicas do projeto a ser desenvolvido. A UML independe de linguagem de programação, framework e dos processos de desenvolvimento do software, fazendo com que diferentes abordagens possam ser utilizadas durante o processo \cite{BEZERRA}.
+
+O diagrama UML de caso de uso determina as funcionalidades e características presentes no software sendo uma visão geral do ponto de vista do usuário que descreve como este irá interagir com o sistema, seguindo determinadas ações para realizar um objetivo, como por exemplo fazer um login. Há uma padronização em seu desenvolvimento, representada pelas seguintes características, segundo \citeonline{PRESSMAN} e \citeonline{SOMMERVILE}:
+\begin{itemize}
+    \item \textbf{Ator: }representado por figuras de um boneco palito, é aquele que irá interagir com o sistema, sendo este externo ao sistema desenvolvido.
+    \item \textbf{Caso de uso: }representado por uma elipse no diagrama, estes demonstram as ações que os atores podem realizar dentro do sistema, ou seja, identificam as interações individuais entre o sistema e seus usuários. 
+    \item \textbf{Sistema: }elemento opcional representado por um retângulo para definir o objetivo de cada parte do diagrama de caso de uso, sendo 
+\end{itemize}
+
 \subsection{Processo unificado}
-Processo unificado
+O processo unificado é um modelo incremental e iterativo derivado de trabalhos sobre a UML que ilustra as práticas na especificação, no projeto e prevê a prototipação aliada a entrega incremental do desenvolvimento. o PU é descrito em cima de três perspectivas, que podem ser descritas como dinâmica, que mostra as fases do modelo ao longo do tempo, estática, que mostra as atividades realizadas no processo e prática, que sugere boas práticas a serem usadas durante o processo \cite{SOMMERVILE}.
+
+Segundo \citeonline{BEZERRA} existem cinco fases do PU, sendo estas:
+\begin{itemize}
+    \item \textbf{Fase de concepção: }identifica as entidades externas que irão interagir com o sistema, descrevendo os requisitos do projeto, que se desenvolve todo o planejamento para que seja possível as futuras iterações incrementais do processo. Nesta etapa é desenvolvido, também, a arquitetura provisória do sistema, que será refinada e expandida nos processos subsequentes.
+    \item \textbf{Fase de elaboração: }refina e expande, por meio da ampliação da arquitetura do sistema, a fase de concepção, criando o modelo de requisitos e o modelo de implementação, mesmo ainda não oferecendo os recursos necessários para a utilização do sistema. Define-se as tecnologias que serão utilizadas ao longo do projeto, como frameworks e banco de dados, por exemplo.
+    \item \textbf{Fase de construção: }é a fase que será desenvolvido o sistema por meio da programação, ou seja, as iterações desta etapa serão constituídas por fazer uma parte do sistema e a integrar as demais existentes, podendo serem desenvolvidas em paralelo. Tudo isto deve ser feito seguindo as documentações geradas nesta etapa e nas anteriores, para que não haja falha na entrega dos requisitos necessários. E ao fim desta fase, deve-se ter um sistema de software documentado e funcionando corretamente em seu ambiente operacional, de modo que já possa ser utilizado em modo de teste pelo usuário.
+    \item \textbf{Fase de transição: }é a fase que entrega-se o software ao usuário final para testes, juntamente aos manuais de utilização e instalação, se for o caso, fazendo com que sejam relatados possíveis defeitos e ajustes necessários. Na conclusão desta etapa, o software poderá operar em modo de produção.
+    \item \textbf{Fase de produção: }disponibiliza o ambiente operacional ao usuário, monitorando o seu uso contínuo, por meio de suporte ao ambiente operacional, realizando alterações e correções se forem necessários.
+\end{itemize}
+
+No PU, a iteração ocorre de duas formas: entre as cinco fases e entre a própria fase, fazendo com que possam acontecer de maneira concorrente e escalonada. Pode-se retornar a cada uma dessas etapas caso seja necessário complementar e/ou corrigir algum requisito ou definir uma nova integração, por exemplo, tornando-se incremental a cada etapa.
+
+
+\section{Padores de projetop}
+
+Padrões de projeto
+Os padrões de projeto foram obtidos a partir das ideias apresentadas por Christopher Alexander (ALEXANDER
+et al., 1977), que sugeriu haver padrões comuns de projeto de prédios que eram inerentemente agradáveis e
+eficazes. O padrão é uma descrição do problema e da essência de sua solução, de modo que a solução possa ser
+reusada em diferentes contextos. O padrão não é uma especificação detalhada. Em vez disso, você pode pensar
+nele como uma descrição de conhecimento e experiência, uma solução já aprovada para um problema comum.
+Uma citação do site da Hillside Group (<http://hillside.net:>), dedicado a manter informações sobre os padrões,
+sintetiza seu papel no reúso:
+Padrões e Linguagens de Padrões são formas de descrever as melhores práticas, bons projetos e capturar a experiência
+de uma forma que torne possível a outros reusaressa experiência.
+Os padrões tiveram um enorme impacto no projeto de software orientado a objetos. Além de serem soluções
+já testadas para problemas comuns, tornaram-se um vocabulário para falar sobre um projeto. Você pode, portanto,
+explicar seu projeto por meio de descrições dos padrões que você usou. Isso é particularmente verdadeiro para os
+padrões de projeto mais conhecidos que foram originalmente descritos pela 'Gangue dos Quatro'em seu livro de
+padrões (GAMMA et al., 1995). Outras descrições de padrões particularmente importantes são as publicadas em
+uma série de livros de autores da Siemens, uma grande empresa europeia de tecnologia (BUSCHMANN et al., 1996;.
+BUSCHMANN et al., 2007a; BUSCHMANN et al., 2007b; KIRCHER e JAIN, 2004; SCHMIDT et al., 2000).
+Os padrões de projeto são normalmente associados com projeto orientado a objetos. Muitas vezes, os padrões
+publicados contam com as características de objetos, como herança e polimorfismo para fornecer generalidade.
+No entanto, o princípio geral de encapsular a experiência em um padrão é aquele igualmente aplicável a qualquer
+tipo de projeto de software. Então, você poderia ter padrões de configuração para os sistemas COTS. Os padrões
+são uma maneira de reusar o conhecimento e a experiência de outros projetistas.
+Os quatro elementos essenciais dos padrões de projeto foram definidos pela 'Gangue dos Quatro', em seu livro
+de padrões:
+1. Um nome que seja uma referência significativa para o padrão.
+2. Uma descrição da área de problema que explique quando o modelo pode ser aplicado.
+3. A descrição da solução das partes da solução de projeto, seus relacionamentos e suas responsabilidades. Essa
+não é uma descrição do projeto concreto; é um modelo para uma solução de projeto que pode ser instanciado
+de diferentes maneiras. Costuma ser expresso graficamente e mostra os relacionamentos entre os objetos e
