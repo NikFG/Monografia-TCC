@@ -1,21 +1,35 @@
 % -----------------------------------------
 \chapter{Materiais e Métodos}\label{chp:LABEL_CHP_3}
 % -----------------------------------------
-\section{Materiais}
-FALTA ARRUMAR
+Neste capítulo serão apresentados os materiais e métodos utilizados para o desenvolvimento da aplicação. As linguagens de programação, os frameworks, bibliotecas e suas especificações técnicas são apresentados em \ref{materiais}. Como serão utilizados tais materiais e os passos para o desenvolvimento da aplicação são descritos em \ref{metodos}.
+
+\section{Materiais} \label{materiais}
+Os materiais
+
 \subsection{HTML}
 O Hiper Text Markup Language (HTML) é uma linguagem de marcação utilizada para o desenvolvimento de páginas web na qual permite a inserção de conteúdo, estabelece a estrutura básica, assim como a organização de informações de uma página web. Isto o torna o componente básico da web, juntamente ao CSS e JavaScript, sendo um conjunto de elementos conectados formando informações das mais variadas, podendo conter palavras, imagens, documentos entre outros tipos dados. Seu funcionamento se dá pela leitura de seus arquivos, que é renderizada para o usuário final por meio de um navegador web. Portanto, é o esqueleto no qual uma página se forma \cite{FLANAGAN}.
+
 \subsection{CSS}
-O Cascading Style Sheets (CSS) é a linguagem utilizada para estilizar o HTML. Isso quer dizer que todos os elementos podem ser estilizados, ou seja, é possível modificar detalhes como espaçamentos, cores, margens, fonte, tamanho desta fonte, bordas, efeitos visuais, entre vários outros detalhes para cada um. Desta maneira, é um complemento ao HTML, dando forma e modificação desta estrutura previamente feita \cite{FLANAGAN}.
+O Cascading Style Sheets (CSS) é a linguagem utilizada para estilizar o HTML. Todos os elementos podem ser estilizados, ou seja, é possível modificar detalhes como espaçamentos, cores, margens, fonte, tamanho desta fonte, bordas, efeitos visuais, entre vários outros detalhes para cada um. Desta maneira, é um complemento ao HTML, dando forma e modificação desta estrutura previamente feita \cite{FLANAGAN}.
+
+Segundo \citeonline{DUCKETT}, o CSS pode ser reutilizado em diversas páginas criando padrões visuais a aplicação, assim como utilizado em áreas específicas. Torna as páginas, desde que usado para este princípio, mais responsivas ao organizar o layout e adaptar cada bloco visual para telas com diferentes tamanhos.
+
 \subsection{JavaScript}
-JavaScript é a linguagem de programação da web, que é interpretada pelos navegadores web. Diversos sites modernos utilizam esta linguagem para manipular o comportamento da página em conjunto ao HTML e CSS. Podendo ser utilizada tanto no front-end quanto no back-end se torna muito versátil para o desenvolvimento destes sistemas. Além disso, a mudança de dados sem a necessidade de recarregar toda a página permite uma flexibilidade na qual dados podem carregar independentes e de forma assíncrona sem que tenha a necessidade de um usuário final estar constantemente monitorando qualquer alteração \cite{FLANAGAN}.
+Segundo \citeonline{ROBBINS} JavaScript é a linguagem de programação da web, que é interpretada pelos navegadores web. Diversos sites modernos utilizam esta linguagem para manipular o comportamento da página em conjunto ao HTML e CSS. Podendo ser utilizada tanto no frontend quanto no backend se torna muito versátil para o desenvolvimento destes sistemas. A mudança de dados sem a necessidade de recarregar toda a página permite uma flexibilidade na qual dados podem carregar independentes e de forma assíncrona sem que tenha a necessidade de um usuário final estar constantemente monitorando qualquer alteração \cite{FLANAGAN}.
+
+Existem diversas bibliotecas para a linguagem com funções pré-prontas que visam a agilidade no desenvolvimento, que lidam, por exemplo, com a reatividade na página, como é o caso do React.js. Os frameworks tem o há incluso nas bibliotecas juntamente as suas regras de implementação, como é visto no Next.js e sua estruturação das páginas contendo o React.js entre as suas bibliotecas \cite{ROBBINS}.
+
 \subsection{Typescript}
-O TypeScript é uma linguagem de programação de código aberto desenvolvido pela Microsoft e é um conjunto de ferramentas e boas práticas de programação para JavaScript, o qual adiciona recursos a esta linguagem. Dentre as adições, vale ressaltar a tipagem estática, visto que JavaScript não suporta isto\cite{TYPESCRIPT}. Além disso, a orientação a objetos também é suportada pelo TypeScript, o que possibilita a criação de interfaces para os objetos. Sua utilização pode ser atrelada ao JavaScript, ou seja, podem ser utilizados em conjunto para uma maior flexibilidade \cite{CHERNY}.
+O TypeScript é uma linguagem de programação de código aberto desenvolvido pela Microsoft e é um conjunto de ferramentas e boas práticas de programação para JavaScript, o qual adiciona recursos a esta linguagem. Dentre as adições, vale ressaltar a tipagem estática, visto que JavaScript não suporta isto \cite{TYPESCRIPT}.A orientação a objetos também é suportada pelo TypeScript, o que possibilita a criação de interfaces para os objetos. Sua utilização pode ser atrelada ao JavaScript, ou seja, podem ser utilizados em conjunto para uma maior flexibilidade \cite{CHERNY}.
+
 \subsection{PHP}
-O PHP é uma linguagem de script open-source de uso geral, muito utilizada, e especialmente adequada para o desenvolvimento web e que pode ser embutida dentro do HTML. Muito utilizada para o back-end, esta linguagem tem evoluído rapidamente, sendo suportada por diversos desenvolvedores ao redor do mundo. Além disso, o PHP moderno engloba muitas práticas novas que podem ser desconhecidas para aqueles que são novos na linguagem ou para aqueles que estão atualizando de suas versões anteriores \cite{LOCKHART}.
+O PHP é uma linguagem de script open-source de uso geral, muito utilizada, e especialmente adequada para o desenvolvimento web e que pode ser embutida dentro do HTML. Muito utilizada para o backend, esta linguagem tem evoluído rapidamente, sendo suportada por diversos desenvolvedores ao redor do mundo. Além disso, o PHP moderno engloba muitas práticas novas que podem ser desconhecidas para aqueles que são novos na linguagem ou para aqueles que estão atualizando de suas versões anteriores \cite{LOCKHART}.
+
 \subsection{Laravel}
-Framework é um conjunto de ferramentas, recursos e funcionalidades que visa facilitar e agilizar tarefas mais comuns no desenvolvimento de sistemas, e é criado em uma determinada linguagem de. Dito isso, o framework escolhido foi o Laravel, que foi criado no PHP, é gratuito e possui código aberto. Este é utilizado no desenvolvimento de sistemas web e seu objetivo é fornecer código e recursos claros, simples e bonitos que ajudem os desenvolvedores a aprender, iniciar e desenvolver rapidamente e escrever um código simples, claro e duradouro \cite{STAUFFER}. \\
-Este framework foi baseado no padrão de projeto Model, View, Controller (MVC), dividindo a aplicação em três camadas, sendo estas o modelo, que dita as regras de negócio assim como os dados da aplicação; o controle, que realiza a interpretação das entradas do usuário, sendo estas convertidas para as demais camadas, ou seja, fazendo uma chamada para o modelo ou convertendo dados para a visão; e visão, que consiste na exibição de dados para o usuário. \\
+Framework é um conjunto de ferramentas, recursos e funcionalidades que visa facilitar e agilizar tarefas mais comuns no desenvolvimento de sistemas, e é criado em uma determinada linguagem de. O framework escolhido foi o Laravel, feito com base no PHP, é gratuito e possui código aberto. Este é utilizado no desenvolvimento de sistemas web e seu objetivo é fornecer código e recursos claros, simples e bonitos que ajudem os desenvolvedores a aprender, iniciar e desenvolver rapidamente e escrever um código simples, claro e duradouro \cite{STAUFFER}. 
+
+Este framework foi baseado no padrão de projeto Model, View, Controller (MVC), dividindo a aplicação em três camadas, sendo estas o modelo, que dita as regras de negócio assim como os dados da aplicação; o controle, que realiza a interpretação das entradas do usuário, sendo estas convertidas para as demais camadas, ou seja, fazendo uma chamada para o modelo ou convertendo dados para a visão; e visão, que consiste na exibição de dados para o usuário. 
+FALTA MELHORAR
 \begin{figure}[h]
     \caption{\label{framework_popular}Frameworks back-end mais populares}
     \vspace{5pt}
@@ -23,8 +37,9 @@ Este framework foi baseado no padrão de projeto Model, View, Controller (MVC), 
     \includegraphics[scale=.20]{laravel.png}
     \vspace{5pt}
     \legend{Fonte: Statistcs and data}
-\end{figure}\\
-Além disso a escolha para o projeto se deve ao fato de que, de acordo com a figura \ref{framework_popular}, o Laravel é o framework back-end mais popular até março de 2021 segundo dados dos repositórios com mais estrelas do GitHub, e isto se deve a diversas características que estão contidas nele, sendo estas:
+\end{figure}
+
+A escolha para o projeto se deve ao fato de que, de acordo com a figura \ref{framework_popular}, o Laravel é o framework back-end mais popular até março de 2021 segundo dados dos repositórios com mais estrelas do GitHub, e isto se deve a diversas características que estão contidas nele, sendo estas:
 \begin{itemize}
     \item \textbf{Roteamento rápido e simples:} é possível criar rotas com segurança e de forma simples, evitando requisições não autorizadas de maneira simples por meio dos verbos GET, POST, PUT e DELETE. Também é possível criar grupos de rotas com permissões de acesso específicas.
     \item \textbf{ORM Eloquent:} este facilita a interação com o banco de dados utilizando cada tabela como um objeto modelo correspondente. Outra facilidade é a forma de interação com as tabelas, que seriam a recuperação de registros do banco de dados, assim como sua inserção, atualização e exclusão.
@@ -48,9 +63,9 @@ Este possui um sistema de grid, que resultou em sua responsividade, e dimensiona
 \subsection{React}
 Para melhorar a interatividade da interface do usuário, foi escolhido o React, que segundo seus próprios criados é “uma biblioteca JavaScript declarativa, eficiente e flexível para a criação de interfaces de usuário (UI)”. Isso quer dizer que é uma coleção de funcionalidades que podem ser utilizadas e reutilizadas pelo desenvolvedor, que são seus componentes. Isto permite uma padronização na interface, além de reaproveitamento de código \cite{ZAMMETTI}.
 
-A criação de views é facilitada e simples, sendo estas atualizadas e renderizadas de forma eficiente apenas para os componentes necessários à medida que os dados forem alterados, sendo estas declarativas fazendo que o código seja mais simples de se depurar.
+A criação de views é facilitada e simples, sendo estas atualizadas e renderizadas apenas para os componentes necessários à medida que os dados forem alterados, sendo estas declarativas fazendo que o código seja mais simples de se depurar.
 
-Dito isso, sua forma de trabalhar é com componentes encapsulados gerenciadores dos seus próprios estados, que combinados formam uma UI complexa, podendo ser escritos em JavaScript ou TypeScript.
+Sua forma de trabalhar é com componentes encapsulados gerenciadores dos seus próprios estados, que combinados formam uma UI complexa, podendo ser escritos em JavaScript ou TypeScript.
 
 \subsection{Next.js}
 O Next.js é um framework do React, o qual adiciona várias funcionalidades para esta biblioteca, visando acelerar o processo de desenvolvimento. Construído com intuito de melhorar o desempenho da aplicação implementada em React, há uma indexação do conteúdo da página e pelos motores de busca. Ou seja, se torna mais rápido e prático ao desenvolvedor, melhorando a experiência para o usuário final \cite{KONSHIN}.
@@ -95,10 +110,10 @@ Para o armazenamento das imagens, será utilizado o Firebase Cloud Storage. Este
 \subsection{Heroku}
 O Heroku é uma plataforma como um serviço, que permite hospedagem, além de configurações e publicações de projetos na nuvem e, diferentemente da Vercel, integra também diversos bancos de dados e possui suporte ao PHP. Com sua integração com o GitHub, seu deploy do projeto é feito a cada commit registrado no sistema, o que facilita a integração. Além disto, esta plataforma é gratuita no seu início contendo uma máquina virtual com 512MB, podendo ser escalável à medida que for necessário com seus custos de infraestrutura. 
 
-Segundo a plataforma é monitorado constantemente por múltiplos servidores a cada dependência, fazendo com que as correções sejam aplicadas assim que possível, tendo uma garantia ao usuário e seus servidores.  Outro detalhe é que a estabilidade em sua plataforma também é garantida por eles, visto que seus algoritmos internos verificam caso ocorra uma queda ou falha na aplicação em tempo de execução e a restaura como uma nova instância automaticamente, garantindo uma preservação dos serviços executados pelo seu usuário sem a necessidade de verificar constantemente o que está ativo \cite{HEROKU}.
+Segundo a plataforma,- é monitorado constantemente por múltiplos servidores a cada dependência, fazendo com que as correções sejam aplicadas assim que possível, tendo uma garantia ao usuário e seus servidores.  Outro detalhe é que a estabilidade em sua plataforma também é garantida por eles, visto que seus algoritmos internos verificam caso ocorra uma queda ou falha na aplicação em tempo de execução e a restaura como uma nova instância automaticamente, garantindo uma preservação dos serviços executados pelo seu usuário sem a necessidade de verificar constantemente o que está ativo \cite{HEROKU}.
 
-\section{Métodos}
-Para este projeto, o desenvolvimento será baseado no processo unificado, que propõe etapas as quais são incrementais e interativas, mesmo sendo definido por etapas. Ou seja, tais etapas serão definidas por: concepção, elaboração, construção e transição. Por mais que sejam quatro etapas, como foi dito anteriormente, por mais que sejam as quatro bem definidas, são reexecutadas a cada nova melhoria e funcionalidade da aplicação.
+\section{Métodos} \label{metodos}
+Para este projeto, o desenvolvimento será baseado no processo unificado, que propõe etapas as quais são incrementais e interativas, mesmo sendo definido por etapas \cite{UNIFICADO}. Tais etapas serão definidas por: concepção, elaboração, construção e transição. Por mais que sejam quatro etapas, como foi dito anteriormente, por mais que sejam as quatro bem definidas, são reexecutadas a cada nova melhoria e funcionalidade da aplicação.
 
 A primeira etapa é dada pela concepção, a qual irá levantar o escopo do projeto de forma mais genérica, sendo o caso de uso, que será incrementado a cada nova funcionalidade. Este por sua vez, irá demonstrar como será a interação dos usuários, chamados de atores, com o sistema e suas funcionalidades, que são os casos de uso para cada um. Sendo assim, os atores identificados inicialmente são: supervisor, associado, usuário, visitante e o apresentador, podendo serem vistos no caso de uso representado pela figura \ref{fig_caso_uso}.
 
@@ -126,12 +141,13 @@ A API para a aplicação será feita em Laravel com utilização do SGBD MySQL p
 
 Além disso, a autenticação da aplicação será validada por meio do JWT\footnote{JSON Web Token (JWT) é um padrão aberto (RFC 7519) que define uma maneira compacta e independente para transmitir informações com segurança entre as partes como um objeto JSON. Essas informações podem ser verificadas e confiáveis porque estão assinadas digitalmente.} a autenticidade do usuário, ou seja, para cada requisição que exija segurança, como por exemplo a criação de um evento ou alterações na conta do usuário, que dizendo de forma geral, qualquer alteração solicitada ao SGBD. Isto garantirá que o usuário está devidamente conectado, assim como que sua autenticidade.
 
-\subsection{Front-end}
-O front-end será feito em Next.js, na qual irá receber os dados referentes a API e convertê-los para uma interface ao usuário. Esta interface será um site no qual, usuário poderá interagir e fazer todas as ações permitidas. Além disso, este módulo feita de forma que seja simples, fácil empregando conceitos de usabilidade para uma melhor experiência.\\
+\subsection{Frontend}
+O front-end será feito em Next.js, na qual irá receber os dados referentes a API e convertê-los para uma interface ao usuário. Esta interface será um site no qual, usuário poderá interagir e fazer todas as ações permitidas. Além disso, este módulo feita de forma que seja simples, fácil empregando conceitos de usabilidade para uma melhor experiência.
+
 Para evitar fraudes com bots, será necessário utilizar um sistema que verifique isto, principalmente na criação de usuários, assim como no login destes que é onde vem a ideia do CAPTCHA\footnote{O CAPTCHA (Teste de Turing público completamente automatizado para distinguir entre computadores e pessoas) é um tipo de medida de segurança conhecido como autenticação por desafio e resposta. O CAPTCHA protege contra spam e descriptografia de senhas com um teste simples que prova que você é um ser humano, não um computador tentando invadir uma conta protegida por senha.}. A implementação utilizada foi o hCaptcha\footnote{O hCAPTCHA é um serviço de CAPTCHA gratuito e independente que fornece desafios fáceis para humanos, entretanto são complexos para uma máquina, tais como classificação de um objeto dada as imagens.}, o qual irá proteger o sistema de login da aplicação, dificultando o acesso para máquinas automatizadas.
 
 \subsection{Versionamento}
-O versionamento será feito utilizando o Git, por meio de um repositório no Github. Cada versão será feita com base nos critérios do GitFlow, seguindo a lógica descrita de master e develop, sendo a primeira a versão de produção e a outra sendo a versão com as novas funcionalidades e para testes. Cada parte da aplicação terá seu versionamento de acordo com sua funcionabilidade, ou seja, a API terá seu versionamento separado do front-end.
+O versionamento foi feito utilizando o Git, por meio de um repositório no Github. Cada versão foi feita com base nos critérios do GitFlow, seguindo a lógica descrita de master e develop, sendo a primeira a versão de produção e a outra sendo a versão com as novas funcionalidades e para testes. Cada parte da aplicação terá seu versionamento de acordo com sua funcionabilidade, ou seja, a API terá seu versionamento separado do front-end.
 
 %\begin{lstlisting}[caption={A simple caption}]
  %x := -2 + y

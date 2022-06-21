@@ -1,9 +1,10 @@
 % ----------------------------------------------------------
 \chapter{Fundamentação Teórica}\label{chp:LABEL_CHP_2}
 % ----------------------------------------------------------
+Para entendimento da aplicação da monografia que será apresentada, são necessários alguns conceitos. Por se tratar de uma aplicação web, primeiramente é preciso definir os conceitos do planejamento e estruturação, por meio da engenharia de software, o conceito de frontend, que é a interface da aplicação com o usuário, o backend, onde é feito o tratamento das informações com o banco de dados.
 
-\section{Engenharia de Software}
-A tendência é que softwares fiquem cada vez maiores e mais complexos, e isto se deve ao poder computacional crescente a cada ano. E isto faz com que os usuários criem maiores expectativas em relação aos sistemas de software, que não apenas devem transmitir informações pela internet de forma rápida e segura, mas também adaptados a necessidade de quem o usa. \cite{SOMMERVILE}.
+\section{Engenharia de Software}\label{engsoft}
+A tendência é que softwares fiquem cada vez maiores e mais complexos, e isto se deve ao poder computacional crescente a cada ano. E isto faz com que os usuários criem maiores expectativas em relação aos sistemas de software, que não apenas devem transmitir informações pela internet de forma rápida e segura, mas também adaptados à necessidade de quem o usa. \cite{SOMMERVILE}.
 
 A engenharia de software abrange os processos com um conjunto de métodos e diversas ferramentas que possibilitam aos profissionais desenvolverem sistemas de software com melhor planejamento \cite{PRESSMAN}. Tendo técnicas as quais irão se construir com base na especificação, projeto e evolução dos programas, que normalmente não são relevantes para o primeiro estágio de qualquer processo de projeto de software é o desenvolvimento de uma compreensão dos relacionamentos entre o software que está sendo projetado e seu ambiente externo. E isto é essencial para decidir qual funcionalidade o sistema terá e poderá ser apresentada ao usuário final, assim como a estruturação do próprio projeto e principalmente estabelecer os limites do sistema, ou seja, até que ponto será desenvolvido baseado no contexto do software \cite{SOMMERVILE}.
 
@@ -66,3 +67,38 @@ de padrões:
 3. A descrição da solução das partes da solução de projeto, seus relacionamentos e suas responsabilidades. Essa
 não é uma descrição do projeto concreto; é um modelo para uma solução de projeto que pode ser instanciado
 de diferentes maneiras. Costuma ser expresso graficamente e mostra os relacionamentos entre os objetos e
+
+\section{Aplicação web}
+Uma aplicação web envolve diversas camadas da programação, lidando desde a interação com o usuário por meio da interface gráfica com o frontend, passando pela maninupulação dos dados com o backend e o seu armazenamento no banco de dados. Isto, deve ser precedido de um planejamento, explicado na seção \ref{engsoft}.
+
+\subsection{Frontend}
+O frontend lida com a interface gráfica e apresentação dos dados ao usuário, ou seja, é onde inclui todo o design, estrutura, layout e o conteúdo das páginas que serão exibidas. O \textit{client-side} deve conter boas práticas de User-Interface
+\footnote{É mais uma das ferramentas utilizadas para entregar a boa experiência ao usuário, pois é a parte tangível de um projeto, onde você constrói visualmente o site ou qualquer outra plataforma.}
+e User-Experience
+\footnote{É tudo que envolve o modo como qualquer usuário interage com o mundo ao seu redor. Na verdade o termo user experience é muito amplo, mas quando falamos de marcas, produtos, sistemas e serviços, é importante entender que UX não envolve apenas o design do produto e seu desenvolvimento. Temos que observar todas as etapas do cliente junto à sua marca, desde o primeiro “encontro” até o pós uso ou consumo.} para que o conteúdo seja disposto e melhor interpretado pelo usuário da aplicação. FALTA MELHORAR
+
+\subsubsection{Design responsivo}
+A união de técnicas de grids e imagens fluidos, que se adaptam a proporção da tela que está sendo utilizada faz que o design responsivo se torne uma boa prática no desenvolvimento do frontend. A adaptação pode ser apenas o enquadramento de recursos, dada as proporções de altura e largura de uma tela, assim como a reestruturação do layout de forma que os conteúdos sejam exibidos de maneiras distintas nos mais diferentes dispositivos por meio do media query. \cite{MOZILA}
+
+\subsubsection{Programação reativa}
+\subsection{Backend}
+O backend lida com a manipulação e controle do banco de dados com o foco na parte do servidor de uma aplicação web. Podendo ser utilizado para o gerenciamento de login, nesta camada há a necessidade da proteção dos dados. Os usuários não interagem diretamente com o backend, necessitando de interfaces para realizar tal manipulação.
+
+\subsubsection{API}
+A API é um conjunto de rotinas e padrões criados por uma aplicação visando a interoperabilidade entre aplicações. Podendo ser feita na camada de backend, uma API requere uma funcionalidade requisitada por um usuário no frontend para o backend processar os dados e os entregar seguindo um padrão por meio do protocolo HTTP
+\footnote{Protocolo cliente-servidor que permite obtenção de recursos, como arquivos JSON ou documentos HTML. É a base da troca de dados pelas aplicações web que suas mensagens são enviadas por meio de requisições e tem como retorno uma resposta.\cite{HTTP}  https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Overview}.
+teste
+https://becode.com.br/o-que-e-api-rest-e-restful/
+
+\subsection{Framework}
+Um framework é um conjunto de ferramentas de programação que fornece funcionalidades genéricas que podem ser alteradas de acordo com o uso específico. Fornecendo um padrão, é possível criar aplicações reunindo estruturas, bibliotecas de código e seu conjunto de ferramentas documentados que estão prontos para o uso do desenvolvedor.
+
+\subsection{Banco de dados relacional}
+Segundo \citeonline{HEUSER}, um banco de dados relacional é composto por tabelas ou relações. As tabelas são um um conjunto não ordenado de tuplas, que possuem campos com suas propriedades. As relações, ligam as tabelas entre si por meio de suas chaves, fazendo com que 
+\section{Versionamento}
+Segundo \citeonline{IPSENSE} o versionamento é uma metodologia aplicada por programadores visando controlar e acompanhar o histórico de alterações em um software, permitindo diferenciar mudanças realizadas em cada versão. A manutenção do código, ou seja adicionar ou alterar informações do sistema para atender novas demandas, pode ser realizada através destas ramificações, que são diferentes instâncias de um mesmo programa, podendo uma instância conter determinadas alterações enquanto a outra se mantém estável sem as modificações \cite{SOMOSTERA}.
+
+
+https://www.ipsense.com.br/blog/entenda-a-importancia-do-versionamento-de-software/
+https://gaea.com.br/entenda-por-que-versionamento-de-software-e-tao-importante/
+https://blog.somostera.com/data-science/versionamento
