@@ -4,7 +4,7 @@
 Neste capítulo serão apresentados os materiais e métodos utilizados para o desenvolvimento da aplicação. As linguagens de programação, os frameworks, bibliotecas e suas especificações técnicas são apresentados em \ref{materiais}. Como serão utilizados tais materiais e os passos para o desenvolvimento da aplicação são descritos em \ref{metodos}.
 
 \section{Materiais} \label{materiais}
-A seguir, serão descritos os materiais utilizados para o desenvolvimento da aplicação, que envolvem os frameworks web front e backend do projeto e suas linguagens de programação, juntamente com a descrição do SGBD e do versionamento.
+A seguir, serão descritos os materiais utilizados para o desenvolvimento da aplicação, que envolvem os frameworks web front e backend do projeto e suas linguagens de programação, juntamente com a descrição das tecnologias do SGBD e versionamento.
 
 \subsection{HTML}
 O Hiper Text Markup Language (HTML) é uma linguagem de marcação utilizada para o desenvolvimento de páginas web na qual permite a inserção de conteúdo, estabelece a estrutura básica, assim como a organização de informações de uma página web. Isto o torna o componente básico da web, juntamente ao CSS e JavaScript, sendo um conjunto de elementos conectados formando informações das mais variadas, podendo conter palavras, imagens, documentos entre outros tipos dados. Seu funcionamento se dá pela leitura de seus arquivos, que é renderizada para o usuário final por meio de um navegador web. Portanto, é o esqueleto no qual uma página se forma \cite{FLANAGAN}.
@@ -26,20 +26,20 @@ O TypeScript é uma linguagem de programação de código aberto desenvolvido pe
 O PHP é uma linguagem de script open-source de uso geral, muito utilizada, e especialmente adequada para o desenvolvimento web e que pode ser embutida dentro do HTML. Muito utilizada para o backend, esta linguagem tem evoluído rapidamente, sendo suportada por diversos desenvolvedores ao redor do mundo. Além disso, o PHP moderno engloba muitas práticas novas que podem ser desconhecidas para aqueles que são novos na linguagem ou para aqueles que estão atualizando de suas versões anteriores \cite{LOCKHART}.
 
 \subsection{Laravel}
-Framework é um conjunto de ferramentas, recursos e funcionalidades que visa facilitar e agilizar tarefas mais comuns no desenvolvimento de sistemas, e é criado em uma determinada linguagem de. O framework escolhido foi o Laravel, feito com base no PHP, é gratuito e possui código aberto. Este é utilizado no desenvolvimento de sistemas web e seu objetivo é fornecer código e recursos claros, simples e bonitos que ajudem os desenvolvedores a aprender, iniciar e desenvolver rapidamente e escrever um código simples, claro e duradouro \cite{STAUFFER}. 
+Framework é um conjunto de ferramentas, recursos e funcionalidades que visa facilitar e agilizar tarefas mais comuns no desenvolvimento de sistemas, e é criado em uma determinada linguagem de programação. O framework escolhido foi o Laravel, feito com base no PHP, é gratuito e possui código aberto. Este é utilizado no desenvolvimento de sistemas web e seu objetivo é fornecer código e recursos claros, simples e bonitos que ajudem os desenvolvedores a aprender, iniciar e desenvolver rapidamente e escrever um código simples, claro e duradouro \cite{STAUFFER}. A hospedagem do Laravel é suportada por diversos provedores, incluindo o Heroku, que será detalhado nesta seção. 
 
 Este framework foi baseado no padrão de projeto Model, View, Controller (MVC), dividindo a aplicação em três camadas, sendo estas o modelo, que dita as regras de negócio assim como os dados da aplicação; o controle, que realiza a interpretação das entradas do usuário, sendo estas convertidas para as demais camadas, ou seja, fazendo uma chamada para o modelo ou convertendo dados para a visão; e visão, que consiste na exibição de dados para o usuário. 
 FALTA MELHORAR
 \begin{figure}[h]
-    \caption{\label{framework_popular}Frameworks back-end mais populares}
+    \caption{\label{framework_popular}Frameworks backend mais populares}
     \vspace{5pt}
     \centering
     \includegraphics[scale=.20]{laravel.png}
     \vspace{5pt}
-    \legend{Fonte: Statistcs and data}
+    \legend{Fonte: Statistcs and data\cite{STATISTICS}}
 \end{figure}
 
-A escolha para o projeto se deve ao fato de que, de acordo com a figura \ref{framework_popular}, o Laravel é o framework back-end mais popular até março de 2021 segundo dados dos repositórios com mais estrelas do GitHub, e isto se deve a diversas características que estão contidas nele, sendo estas:
+A escolha para o projeto se deve ao fato de que, de acordo com a figura \ref{framework_popular}, o Laravel é o framework backend mais popular até março de 2021 segundo dados dos repositórios com mais estrelas do GitHub, e isto se deve a diversas características que estão contidas nele, sendo estas:
 \begin{itemize}
     \item \textbf{Roteamento rápido e simples:} é possível criar rotas com segurança e de forma simples, evitando requisições não autorizadas de maneira simples por meio dos verbos GET, POST, PUT e DELETE. Também é possível criar grupos de rotas com permissões de acesso específicas.
     \item \textbf{ORM Eloquent:} este facilita a interação com o banco de dados utilizando cada tabela como um objeto modelo correspondente. Outra facilidade é a forma de interação com as tabelas, que seriam a recuperação de registros do banco de dados, assim como sua inserção, atualização e exclusão.
@@ -58,7 +58,7 @@ A linguagem SQL é utilizada para executar tarefas em tabelas de banco de dados.
 Controlador de versão é uma ferramenta de software na qual ajuda os desenvolvedores, seja em equipe ou não, a gerenciar alterações no código-fonte, mantendo o registro destas modificações. Então, o GIT é um sistema de controle de versão que possui código aberto, é flexível (possui vários tipos de fluxos de trabalho de desenvolvimento não lineares), é seguro (toda sua estrutura é protegida com um algoritmo de hash de criptografia seguro chamado SHA1) e possui um bom desempenho (Fazer o commit de novas alterações, branches, mesclagem e comparação de versões anteriores – tudo é otimizado para desempenho) \cite{SANTACROCE}.
 
 \subsection{Bootstrap}
-Para a estilização do front-end foi escolhido o Bootstrap, que é um framework gratuito de HTML, CSS e JavaScript no qual visa a criação de sites responsivos, ou seja, se adaptando tanto para telas maiores, como monitores de computador assim como para telas menores, como é o caso dos celulares. Além disso, contém bibliotecas prontas de estilização que procuram agilizar o processo de desenvolvimento no CSS e JavaScript, assim como a reutilização do código e sua personalização \cite{SPURLOCK}.
+Para a estilização do frontend foi escolhido o Bootstrap, que é um framework gratuito de HTML, CSS e JavaScript no qual visa a criação de sites responsivos, ou seja, se adaptando tanto para telas maiores, como monitores de computador assim como para telas menores, como é o caso dos celulares. Além disso, contém bibliotecas prontas de estilização que procuram agilizar o processo de desenvolvimento no CSS e JavaScript, assim como a reutilização do código e sua personalização \cite{SPURLOCK}.
 
 Este possui um sistema de grid, que resultou em sua responsividade, e dimensiona a aplicação em até doze colunas de acordo com o tamanho de cada dispositivo. Além disso possui componentes de interface que agilizam o desenvolvimento, visto que já estão implementados de forma que podem ser personalizados, sendo um exemplo a barra de navegação (navbar).
 
@@ -83,11 +83,13 @@ Dada a pré-renderização do Next.js, há duas formas as quais ele pode realiza
 
 A Server-side Rendering, que diferentemente da geração estática, a página HTML é gerada a cada requisição. Como a página não pode gerar um cache no CDN, será mais lenta, porém estará sempre atualizada no momento da requisição. Entretanto, por mais que seja gerada em tempo de execução, o processamento é similar ao anterior, visto que a página é renderizada no próprio servidor, enviando-se apenas o HTML para o cliente final, com as funções em JavaScript necessárias, fazendo com que evite processamento no navegador do usuário, e fique apenas no servidor \cite{VERCEL}.
 
+A Vercel, criadora do Next.js, suporta todos os recursos da linguagem em sua hospedagem (mais detalhes a frente).
+
 \subsection{MySQL}
 Para o banco de dados, foi escolhido o MySQL é um SGBD relacional de código aberto usado na maioria das aplicações gratuitas para gerir suas bases de dados que utiliza a linguagem SQL. Este possui um alto desempenho, sendo possível verificar uma grande quantidade de dados em pouco tempo, o que gera também a escalabilidade deste sistema \cite{HEUSER}.
 
 \subsection{GitHub}
-O GitHub é uma plataforma online onde são criados e hospedados repositórios GIT de projetos. Este sistema, visa facilitar o controle de versões de um software ou aplicação, funcionando em um formato de rede social para desenvolvedores \cite{SANTACROCE}. Além disso, é amplamente utilizada com mais de 56 milhões de desenvolvedores em 2020 conforme mostra a figura \ref{utilizacao_github}. Dito isso, esta plataforma será utilizada para manter as versões da aplicação no front-end e no back-end.
+O GitHub é uma plataforma online onde são criados e hospedados repositórios GIT de projetos. Este sistema, visa facilitar o controle de versões de um software ou aplicação, funcionando em um formato de rede social para desenvolvedores \cite{SANTACROCE}. Além disso, é amplamente utilizada com mais de 56 milhões de desenvolvedores em 2020 conforme mostra a figura \ref{utilizacao_github}. Dito isso, esta plataforma será utilizada para manter as versões da aplicação no frontend e no backend.
 
 \begin{figure}[H]
     \caption{\label{utilizacao_github}Utilização por linguagem do GitHub}
@@ -102,7 +104,7 @@ O GitHub é uma plataforma online onde são criados e hospedados repositórios G
 Gitflow Workflow é um design de fluxo de trabalho Git que foi publicado e popularizado pela primeira vez por Vincent Driessen no nvie. Este define um modelo de ramificação rigoroso, projetado com base no lançamento do projeto, o que oferece uma estrutura robusta para gerenciar projetos maiores. O Gitflow é eficiente para projetos que possuem um ciclo de lançamento agendado, visto que não adiciona novos conceitos ao fluxo de trabalho, mas sim define funções específicas as ramificações e quando devem interagir (SANTACROCE, 2015). Ou seja, em conjunto com o versionamento do GitHub, será mais fácil localizar problemas, caso haja, assim como uma padronização em cada commit é também possível a verificação de o que foi feito de uma forma mais simples e rápida.
 
 \subsection{Vercel}
-A Vercel é uma plataforma que hospeda aplicações web front-end de forma gratuita por meio de um CDN\footnote{Central Delivery Network (Rede de Distribuição de Conteúdo) é uma rede de servidores que armazenam réplicas do conteúdo em memória cache do site e as entrega aos usuários visitantes, de acordo com sua localização geográfica de modo que os conecte no servidor mais rápido e mais próximo, fazendo com que se reduza a latência.}
+A Vercel é uma plataforma que hospeda aplicações web frontend de forma gratuita por meio de um CDN\footnote{Central Delivery Network (Rede de Distribuição de Conteúdo) é uma rede de servidores que armazenam réplicas do conteúdo em memória cache do site e as entrega aos usuários visitantes, de acordo com sua localização geográfica de modo que os conecte no servidor mais rápido e mais próximo, fazendo com que se reduza a latência.}
 global. Com seus 50 domínios disponíveis e 100Gb de largura de banda, juntamente com sua criptografia SSL fazendo a criptografia necessária dos dados para garantir a segurança. Além disso, há uma integração diretamente com o GitHub, que a cada commit na branch predeterminada é gerado um deploy, que atualizará o site com as últimas alterações. Sua escalabilidade é, segundo sua própria documentação, infinita, sendo que cada camada de sua infraestrutura aumenta e/ou diminui dinamicamente de acordo com o sistema e funções de armazenamento de cache necessários \cite{VERCEL}. 
 
 Internamente na plataforma da Vercel, junto ao o seu framework Next.js, há uma otimização de imagem, que será carregada do servidor de acordo com a área de visualização do dispositivo, guardando-as em cache. Esta otimização reduz o uso de banda, minimizando o tráfego de rede de acordo com o que for necessário para o usuário, melhorando então a experiência geral de quem visita a aplicação.
@@ -122,14 +124,14 @@ Exemplificando a organização das tecnologias utilizadas, a figura \ref{info} d
     \caption{\label{info}Organização das tecnologias utilizadas}
     \vspace{5pt}
     \centering
-    \includegraphics[scale=.35]{infografico.png}
+    \includegraphics[scale=.33]{infografico.png}
     \vspace{5pt}
     \legend{Fonte: Próprio autor}
 \end{figure}
 
 
 \section{Métodos} \label{metodos}
-Para este projeto, o desenvolvimento será baseado no processo unificado, que propõe etapas as quais são incrementais e interativas, mesmo sendo definido por etapas \cite{UNIFICADO}. Tais etapas serão definidas por: concepção, elaboração, construção e transição. Por mais que sejam quatro etapas, como foi dito anteriormente, por mais que sejam as quatro bem definidas, são reexecutadas a cada nova melhoria e funcionalidade da aplicação.
+Para este projeto, o desenvolvimento será baseado no processo unificado, que propõe etapas as quais são incrementais e interativas, mesmo sendo definido por etapas \cite{SOMMERVILE}. Tais etapas serão definidas por: concepção, elaboração, construção e transição. Por mais que sejam quatro etapas, como foi dito anteriormente, por mais que sejam as quatro bem definidas, são reexecutadas a cada nova melhoria e funcionalidade da aplicação.
 
 A primeira etapa é dada pela concepção, a qual irá levantar o escopo do projeto de forma mais genérica, sendo o caso de uso, que será incrementado a cada nova funcionalidade. Este por sua vez, irá demonstrar como será a interação dos usuários, chamados de atores, com o sistema e suas funcionalidades, que são os casos de uso para cada um. Sendo assim, os atores identificados inicialmente são: supervisor, associado, usuário, visitante e o apresentador, podendo serem vistos no caso de uso representado pela figura \ref{fig_caso_uso}.
 
@@ -158,9 +160,9 @@ A API para a aplicação será feita em Laravel com utilização do SGBD MySQL p
 Além disso, a autenticação da aplicação será validada por meio do JWT\footnote{JSON Web Token (JWT) é um padrão aberto (RFC 7519) que define uma maneira compacta e independente para transmitir informações com segurança entre as partes como um objeto JSON. Essas informações podem ser verificadas e confiáveis porque estão assinadas digitalmente.} a autenticidade do usuário, ou seja, para cada requisição que exija segurança, como por exemplo a criação de um evento ou alterações na conta do usuário, que dizendo de forma geral, qualquer alteração solicitada ao SGBD. Isto garantirá que o usuário está devidamente conectado, assim como que sua autenticidade.
 
 \subsection{Frontend}
-O front-end será feito em Next.js, na qual irá receber os dados referentes a API e convertê-los para uma interface ao usuário. Esta interface será um site no qual, usuário poderá interagir e fazer todas as ações permitidas. Além disso, este módulo feita de forma que seja simples, fácil empregando conceitos de usabilidade para uma melhor experiência.
+O frontend será feito em Next.js, na qual irá receber os dados referentes a API e convertê-los para uma interface ao usuário. Esta interface será um site no qual, usuário poderá interagir e fazer todas as ações permitidas. Além disso, este módulo feita de forma que seja simples, fácil empregando conceitos de usabilidade para uma melhor experiência.
 
 Para evitar fraudes com bots, será necessário utilizar um sistema que verifique isto, principalmente na criação de usuários, assim como no login destes que é onde vem a ideia do CAPTCHA\footnote{O CAPTCHA (Teste de Turing público completamente automatizado para distinguir entre computadores e pessoas) é um tipo de medida de segurança conhecido como autenticação por desafio e resposta. O CAPTCHA protege contra spam e descriptografia de senhas com um teste simples que prova que você é um ser humano, não um computador tentando invadir uma conta protegida por senha.}. A implementação utilizada foi o hCaptcha\footnote{O hCAPTCHA é um serviço de CAPTCHA gratuito e independente que fornece desafios fáceis para humanos, entretanto são complexos para uma máquina, tais como classificação de um objeto dada as imagens.}, o qual irá proteger o sistema de login da aplicação, dificultando o acesso para máquinas automatizadas.
 
 \subsection{Versionamento}
-O versionamento foi feito utilizando o Git, por meio de um repositório no Github. Cada versão foi feita com base nos critérios do GitFlow, seguindo a lógica descrita de master e develop, sendo a primeira a versão de produção e a outra sendo a versão com as novas funcionalidades e para testes. Cada parte da aplicação terá seu versionamento de acordo com sua funcionabilidade, ou seja, a API terá seu versionamento separado do front-end.
+O versionamento foi feito utilizando o Git, por meio de um repositório no Github. Cada versão foi feita com base nos critérios do GitFlow, seguindo a lógica descrita de master e develop, sendo a primeira a versão de produção e a outra sendo a versão com as novas funcionalidades e para testes. Cada parte da aplicação terá seu versionamento de acordo com sua funcionabilidade, ou seja, a API terá seu versionamento separado do frontend.

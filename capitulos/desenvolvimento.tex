@@ -63,28 +63,57 @@ Com todas estas informações sobre a responsabilidade e design de cada tela da 
 A estruturação segue um modelo de distribuição vertical, o qual prevê a distinção entre divisão de componentes, neste caso a interface com o usuário e a API, em dois servidores distintos, sendo um alocado na Vercel e outro no Heroku. Mesmo que uma aplicação dependa da outra para que funcione integralmente, são serviços distintos e que melhoram de maneira geral o funcionamento do sistema, visto que tais responsabilidades distintas melhoram o tempo de carregamento. Ou seja, enquanto back-end persiste os dados e os processa diretamente, respondendo a requisições, o front-end fará as requisições recuperando o arquivo JSON gerado e o transformando em uma interface gráfica tangível ao usuário.
 
 
-\section{Modelos}
-Nesta etapa, foram criados modelos os quais tiveram embasamento no diagrama de Caso de Uso, assim como nos mockups, visto que deve atender os requisitos predeterminados. Desta forma, foram criados os modelos conforme figura \ref{modelo_banco}, que determina cada classe do banco de dados feita no Laravel para que possa representar os relacionamentos entre as tabelas do MySQL, além de determinar cada atributo das classes. Estes foram feitos com base na figura \ref{models_projeto}, que representa o diagrama de entidade e relacionamento do banco de dados.
-\begin{figure}[h]
-    \caption{\label{modelo_banco}DER do banco de dados}
-    \vspace{5pt}
-    \centering
-    \includegraphics[scale=.25]{modelo_banco.png}
-    \vspace{5pt}
-    \legend{Fonte: Próprio autor}
-\end{figure}
-\begin{figure}[h]
+\section{Modelo de banco de dados}
+Nesta etapa foram criados modelos os quais tiveram embasamento no diagrama de Caso de Uso, assim como nos mockups, visto que deve atender os requisitos predeterminados. Foram criados os modelos conforme figura \ref{modelo_banco}, que determina cada classe do banco de dados feita no Laravel para que possa representar os relacionamentos entre as tabelas do MySQL, além de determinar cada atributo das classes. Estes foram feitos com base na figura \ref{models_projeto}, que representa o diagrama de entidade e relacionamento do banco de dados.
+\begin{figure}[H]
     \caption{\label{models_projeto}Classes de modelo}
     \vspace{5pt}
     \centering
-    \includegraphics[scale=.5]{models_projeto.png}
+    \includegraphics[scale=.8]{models_projeto.png}
     \vspace{5pt}
     \legend{Fonte: Próprio autor}
 \end{figure}
+\begin{figure}[H]
+    \caption{\label{modelo_banco}DER do banco de dados}
+    \vspace{5pt}
+    \centering
+    \includegraphics[scale=.40, angle = -90]{modelo_banco.png}
+    \vspace{5pt}
+    \legend{Fonte: Próprio autor}
+\end{figure}
+O banco de dados foi planejado criando-se a partir das funcionalidades da aplicação. As tabelas são descritas abaixo:
+\begin{itemize}
+    \item \textbf{Users:} tabela de usuários, com informações básicas do cadastro, contendo nome, email, cpf, senha e telefone. O campo senha é criptografado de modo que tenha segurança ao gravar os dados. Os campos email e cpf devem ser únicos no banco. E há um campo de chave estrangeira, que é relacionado a instituição, podendo ser nulo, que caso o usuário esteja vinculado a uma instituição, será atribuído o id a ele.
+    
+    \item \textbf{Instituicoes:} tabela que contém as informações referentes as instituições, tais como o nome, cnpj, endereço e cidade. O campo cnpj deve ser único. A chave estrangeira administrador\_id é relacionada ao usuário que criou ou foi transferida a administração da instituição.
+    
+    \item \textbf{Categorias :} tabela criada com intuito de categorizar os eventos de modo que seja facilitada a busca na aplicação.
+    
+    \item \textbf{Tipo\_Eventos:} tabela criada com intuito de sub-categorizar os eventos de modo que seja facilitada a busca na aplicação
+    
+    \item \textbf{Tipo\_Atividades:} tabela criada com intuito de categorizar os as atividades de modo que seja facilitada a busca na aplicação.
+    
+    \item \textbf{Eventos:} tabela que possui os dados do evento, como seu título, expectativa de participantes, banner e uma breve descrição como obrigatórios. Os campos opcionais, como local, descrição podem ser adicionados depois, não sendo obrigatórios. O campo banner é uma url da imagem armazenada no Firebase. As chaves estrangeiras são definidas pela categoria\_id, tipo\_id (ambas referentes às categorias e tipos escolhidos pelo usuário), instituição\_id e user\_id (ambas referentes ao usuário que criou o evento) e chave modelo\_certificado\_id (não obrigatória para criação do evento, mas obrigatória para criação dos certificados posteriormente).
+    
+    \item \textbf{Modelo\_Certificados:} a tabela para os modelos de certificado deve conter os campos de título, nome\_assinatura e cargo\_assinatura como obrigatórios, sendo textos. Os campos de imagem\_fundo, assinatura e logo devem ser preenchidos com as urls das imagens armazenadas no Firebase. A chave estrangeira instituicao\_id se refere a instituição que criou tal modelo.
+    
+    \item \textbf{Apresentadores :} os apresentadores podem ser externos à aplicação, então contêm um nome e email. Caso o email seja vinculado a um usuário, será atribuído um id de usuário nesta tabela.
+    
+    \item \textbf{Tipo\_Imagens:} descreve o tipo de imagem que está no evento, podendo ser banner ou outros.
+    
+    \item \textbf{Imagens:} tabela que armazena a url da imagem contida no Firebase, juntamente com as chaves estrangeiras de seu tipo e do evento que foi vinculada.
+    
+    \item \textbf{Atividades:} 
+    
+    \item \textbf{Certificados:} esta tabela descreve todas as informações presentes do evento, atividade, data, e as horas da atividade. Deve conter um modelo de certificado para que possa se basear as informações. O certificado pode ser para um participante, que deve ser usuário da aplicação, ou um apresentador, podendo este ser externo a aplicação.
+    
+    \item \textbf{Certificados :}
+    
+\end{itemize}
 
 \section{Controllers}
 Por meio dos controladores do Laravel, é possível manipular as operações do banco de dados, e para que haja uma organização e mantenha o padrão MVC, foram criados controladores específicos para cada modelo, sendo cada um atribuído a responsabilidade do modelo correspondente e essa estruturação pode ser vista na figura \ref{controllers}, a qual demonstra cada um dos controladores.
-\begin{figure}[h]
+\begin{figure}[H]
     \caption{\label{controllers}Controladores}
     \vspace{5pt}
     \centering
@@ -93,41 +122,96 @@ Por meio dos controladores do Laravel, é possível manipular as operações do 
     \legend{Fonte: Próprio autor}
 \end{figure}
 
-Além disso, por fazerem parte de uma API (explicada com mais detalhes posteriormente), cada operação deve retornar um JSON, juntamente com o código de status de retorno do HTTP. No trecho de código, visto na figura \ref{orm}, é um exemplo da função a qual recebe uma requisição determinando cada um dos filtros, e então por meio do eloquent ORM, realizando a query no banco de dados e no fim retornando um JSON com os dados, padronizando, então, a maneira de se receber e retornar os dados.
-\begin{figure}[h]
-    \caption{\label{orm}Exemplo do ORM}
-    \vspace{5pt}
-    \centering
-    \includegraphics[scale=.5]{ORM.png}
-    \vspace{5pt}
-    \legend{Fonte: Próprio autor}
-\end{figure}
+Além disso, por fazerem parte de uma API (explicada com mais detalhes posteriormente), cada operação deve retornar um JSON, juntamente com o código de status de retorno do HTTP. No trecho de código, visto no código \ref{orm}, é um exemplo da função a qual recebe uma requisição determinando cada um dos filtros, e então por meio do eloquent ORM, realizando a query no banco de dados e no fim retornando um JSON com os dados, padronizando, então, a maneira de se receber e retornar os dados.
+\begin{lstlisting}[language=PHP, caption = {Exemplo do ORM} \label{orm}]
+ public function index(Request $request): JsonResponse {
+        $eventos = Evento::query()->with(['atividades' => function ($query) {
+            $query->orderBy('data')
+            ->orderBy('horario_inicio')
+            ->orderBy('horario_fim')
+            ->orderBy("nome");
+        }, 'categoria', 'instituicao'])
+            ->whereHas('atividades')
+            ->orderBy('created_at', 'desc');
+
+        if ($request->titulo != null) {
+            $queryLower = trim(strtolower($request->titulo));
+            $eventos->where(function ($query) use ($queryLower) {
+                $query->where(DB::raw('lower(nome)'), 'like', '%' . $queryLower . '%')
+                    ->orWhere(DB::raw('lower(breve_descricao)'), 'like', '%' . $queryLower . '%');
+            });
+        }
+
+        if ($request->cat != null) {
+            $eventos->whereRelation('categoria', 'categorias.id', '=', $request->cat);
+        }
+
+        if ($request->instituicao != null) {
+            $eventos->whereRelation('instituicao', 'instituicoes.id', $request->instituicao);
+        }
+
+        if ($request->dataInicio != null) {
+            if ($request->dataFim != null) {
+                $eventos->whereHas('atividades', function ($q) use ($request) {
+                    $q->whereBetween('data', [$request->dataInicio, $request->dataFim]);
+                });
+            } else {
+                $eventos->whereRelation('atividades', 'atividades.data', $request->dataInicio);
+            }
+        }
+
+        if ($request->horarioInicio != null) {
+            $eventos->whereHas('atividades', function ($q) use ($request) {
+                $q->whereTime('atividades.horario_inicio', '>=', $request->horarioInicio);
+            });
+        }
+
+        if ($request->horarioFim != null) {
+            $eventos->whereHas('atividades', function ($q) use ($request) {
+                $q->whereTime('atividades.horario_fim', '<=', $request->horarioFim);
+            });
+        }
+
+        return response()->json($eventos->paginate(20));
+    }
+\end{lstlisting}
+
+%\begin{figure}[h]
+  %  \caption{\label{orm}Exemplo do ORM}
+   % \vspace{5pt}
+%    \centering
+ %   \includegraphics[scale=.5]{ORM.png}
+  %  \vspace{5pt}
+   % \legend{Fonte: Próprio autor}
+%\end{figure}
 
 Dado o exemplo da busca e seus filtros, a validação de dados na inserção e atualização de dados é essencial para que não haja dados inseridos de maneira indevida e que haja um padrão nas requisições. Isto tudo é feito diretamente no Laravel, que validará antes mesmo do banco de dados e retornará caso haja algum erro.
 \section{Operações API}
 A API foi feita no Laravel, respeitando os padrões estabelecidos pela interface REST. Ou seja, por meio de requisições HTTP do tipo GET, POST e DELETE é possível acessar todas as rotas do back-end. Em diversas destas não será possível acessar sem que haja uma autenticação feita por meio do JWT, que irá validar se há permissão de acesso, e isto determina caso o usuário esteja logado, assim como seu nível de acesso dentro de sua hierarquia. 
 
 Dito isso, as rotas foram criadas em grupos para atenderem as necessidades e criar-se uma organização para cada requisição, então foram organizadas, conforme a figura \ref{rotas_laravel}. Esta demonstra cada um dos agrupamentos, sendo estes aqueles que contém todas as rotas para modelos, assim como para determinadas funcionalidades do sistema. O grupo de eventos terá todas as rotas pertencentes a eventos, sendo estas demonstradas na figura \ref{grupo_rotas}, e conforme pode ser visualizado possuem autenticação e validação do que pode ser escrito na url para que possa ser acessada devidamente. 
-\begin{figure}[h]
-    \caption{\label{rotas_laravel}Grupo de rotas}
-    \vspace{5pt}
-    \centering
-    \includegraphics[scale=.3]{rotas_laravel.png}
-    \vspace{5pt}
-    \legend{Fonte: Próprio autor}
-\end{figure}
-\begin{figure}[h]
-    \caption{\label{grupo_rotas}Exemplo grupo de rotas}
-    \vspace{5pt}
-    \centering
-    \includegraphics[scale=.5]{grupo_rotas.png}
-    \vspace{5pt}
-    \legend{Fonte: Próprio autor}
-\end{figure}
+
+\begin{lstlisting}[language=PHP, caption = {Grupo de rotas} \label{rotas_laravel}]
+ Route::group(["prefix" => "eventos"], function () {
+    Route::get("/", [EventoController::class, 'index']);
+    Route::get("/{id}", [EventoController::class, 'show'])->where('id', '[0-9]+');
+    Route::get("/categorias/{id}", [EventoController::class, 'porCategoria'])->where('id', '[0-9]+');
+
+    Route::get('/user', [EventoController::class, 'eventos_participados'])->middleware('role:usuario');
+    Route::post("/ingressos", [EventoController::class, 'compraIngresso'])->middleware('role:usuario');
+    Route::get('/{id}/user/atividades', [EventoController::class, 'atividades_participadas'])->middleware('role:usuario');
+
+    Route::get("/criados", [EventoController::class, 'eventos_criados'])->can('gerenciar_evento');
+    Route::post("/store", [EventoController::class, 'store'])->can('gerenciar_evento');
+    Route::post("/update/{id}", [EventoController::class, 'update'])->can('gerenciar_evento');
+    Route::delete("/{id}", [EventoController::class, 'destroy'])->can('gerenciar_evento');
+    Route::post("/{id}/uploadImagens", [EventoController::class, 'upload_imagens'])->can('gerenciar_evento')->where('id', '[0-9]+');
+})
+\end{lstlisting}
 
 \section{Componentes}
 Diferentemente do webservice criado no Laravel, a estruturação do frontend no Next.js é feito por meio de componentes, e por ter utilizado do Typescript, há também os tipos que irão fornecer um auxílio no momento da transcrição dos dados, seja na requisição quanto na resposta da API. Na figura \ref{estrutura_next} é possível ver a estruturação geral do projeto, sendo dividido em componentes, páginas, imagens, tipos, utilitários e a configuração do Firebase.
-\begin{figure}[h]
+\begin{figure}[H]
     \caption{\label{estrutura_next}Estrutura do projeto do Next.js}
     \vspace{5pt}
     \centering
@@ -137,7 +221,7 @@ Diferentemente do webservice criado no Laravel, a estruturação do frontend no 
 \end{figure}
 
 Por meio dos componentes, mostrados na estrutura da figura \ref{componentes} é possível a reutilização do código-fonte para diversos layouts, como por exemplo o componente NavBar, o qual é utilizado em diversas páginas, tornando-as padronizadas. Com isto, cada componente, também, terá seu estilo por meio de um arquivo de módulo do CSS, que estende os estilos globais, podendo sobrepô-los. Portanto, cada componente terá sua finalidade pré-definida, podendo ser reutilizada caso sirva o propósito.
-\begin{figure}[h]
+\begin{figure}[H]
     \caption{\label{componentes}Estrutura dos componentes}
     \vspace{5pt}
     \centering
