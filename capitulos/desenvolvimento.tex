@@ -4,15 +4,53 @@
 Nesta seção são detalhados os passos e decisões tomadas ao decorrer do período de desenvolvimento deste trabalho. São apresentadas as etapas de implementação e integração com outras soluções utilizadas, assim como a execução e comparação dos resultados obtidos.
 
 \section{Casos de uso}
-Inicialmente foi desenvolvido o caso de uso expandido do sistema, baseando-se no que foi demonstrado por \citeonline{SOMMERVILE} do modelo UML, como forma tanto de documentação, assim como planejamento do protótipo. Por meio destes, todas as interações do sistema com seus usuários foram pré-determinadas, assim como a definição e organização de requisitos funcionais no sistema dado seu contexto para modelagem do fluxo básico dos eventos diretamente nestes diagramas.
+Inicialmente foi desenvolvido o caso de uso expandido do sistema, baseando-se no que foi demonstrado por \citeonline{SOMMERVILE} do modelo UML, como forma tanto de documentação, assim como planejamento do protótipo. Todas as interações do sistema com seus usuários foram pré-determinadas, assim como a definição e organização de requisitos funcionais no sistema dado seu contexto para modelagem do fluxo básico dos eventos diretamente nestes diagramas. O caso de uso, mostra neste contexto o escopo da aplicação, trazendo as principais funcionalidades que foram desenvolvidas no protótipo limitando-se a eventos educacionais online. Os cenários de interação entre os atores por meio do caso de uso determinado definem principalmente como deveria ser planejado e até qual ponto pode ser utilizado por cada um deles, respeitando sua hierarquia. A imagem \ref{caso_uso_1}
 
-Além disto, o caso de uso, mostra neste contexto o escopo da aplicação, trazendo as principais funcionalidades que foram desenvolvidas no protótipo limitando-se a eventos educacionais online. Adicionando a isto, os cenários de interação entre os atores por meio do caso de uso determinado definem principalmente como deveria ser planejado e até qual ponto pode ser utilizado por cada um deles, respeitando sua hierarquia. 
+\begin{figure}[H]
+    \caption{\label{caso_uso_1}Primeiro caso de uso}
+    \vspace{5pt}
+    \centering
+    \includegraphics[scale=.7]{Caso de uso TCC1.jpeg}
+    \vspace{5pt}
+    \legend{Fonte: Próprio autor}
+\end{figure}
 
-Com base neste diagrama, e sua devida explicação foi possível traçar uma rota de desenvolvimento por meio do processo unificado. No início foi pensado em apenas dois atores, sendo estes um administrador e um usuário comum, como mostra a imagem. Nisto, foram desenvolvidas funcionalidades básicas para estes, contendo a primeira iteração, sem os demais. \\
-Seguindo em frente, para a segunda iteração, já há mais atores contando com a inclusão do associado, sendo intermediário entre usuário e supervisor. Além disso, e novas funcionalidades pensadas para a aplicação, sendo estas a gerência da lista de participantes e a gerência dos eventos apenas para determinado usuários (sendo estas relacionadas ao associado).
-Na terceira iteração foram identificadas necessidades de atores que não precisavam necessariamente de um login como é o caso do visitante, que poderá apenas visualizar os eventos e validar certificados, que são operações mais simples e que não necessitam de qualquer permissão especial. 
 
-Na quarta e última iteração até o momento o sistema está mais moldado pensando em diversas funcionalidades, inclusive com o caso de uso expandido, tendo em vista melhor as funcionalidades e seus retornos do sistema para o ator determinado.
+Com base neste diagrama, e sua devida explicação foi possível traçar uma rota de desenvolvimento por meio do processo unificado. No início foi pensado em apenas dois atores, sendo estes um administrador e um usuário comum, como mostra a imagem. Nisto, foram desenvolvidas funcionalidades básicas para estes, contendo a primeira iteração, sem os demais. 
+
+Para a segunda iteração, já há mais atores contando com a inclusão do associado, sendo intermediário entre usuário e supervisor. Além disso, e novas funcionalidades pensadas para a aplicação, sendo estas a gerência da lista de participantes e a gerência dos eventos apenas para determinado usuários (sendo estas relacionadas ao associado) conforme demonstrado na figura \ref{caso_uso_2}
+
+\begin{figure}[H]
+    \caption{\label{caso_uso_2}Segundo caso de uso}
+    \vspace{5pt}
+    \centering
+    \includegraphics[scale=.7]{Caso de uso TCC2.jpeg}
+    \vspace{5pt}
+    \legend{Fonte: Próprio autor}
+\end{figure}
+
+Na terceira iteração foram identificadas necessidades de atores que não precisavam necessariamente de um login como é o caso do visitante, que poderá apenas visualizar os eventos e validar certificados, que são operações mais simples e que não necessitam de qualquer permissão especial de acordo com o que é exibido na figura \ref{caso_uso_3}. 
+
+\begin{figure}[H]
+    \caption{\label{caso_uso_3}Terceiro caso de uso}
+    \vspace{5pt}
+    \centering
+    \includegraphics[scale=.7]{Caso de uso TCC3.jpeg}
+    \vspace{5pt}
+    \legend{Fonte: Próprio autor}
+\end{figure}
+
+Na quarta e última iteração até o momento o sistema está mais moldado pensando em diversas funcionalidades, inclusive com o caso de uso expandido, tendo em vista melhor as funcionalidades e seus retornos do sistema para o ator determinado de acordo com a figura \ref{caso_uso_4}.
+
+\begin{figure}[H]
+    \caption{\label{caso_uso_4}Quarto caso de uso}
+    \vspace{5pt}
+    \centering
+    \includegraphics[scale=.7]{Caso de uso TCC4.jpeg}
+    \vspace{5pt}
+    \legend{Fonte: Próprio autor}
+\end{figure}
+
 
 \section{Mokcups}
 Dados os casos de uso, será possível criar um mockup das telas baseado nestas informações. Ou seja, a criação de telas por meio do Figma possibilitou a visualização e alteração do layout de uma forma simplificada antes de serem implementadas de fato. Dito isso, toda o mockup foi pensado para seguir padrões na interface, como por exemplo a barra de navegação está presente em todas as páginas a qual o usuário poderá navegar (com exceções apenas da criação de conta e login). E isto facilita a navegação, e mantém a similaridade da aplicação para o usuário final.  
@@ -87,7 +125,7 @@ O banco de dados foi planejado criando-se a partir das funcionalidades da aplica
     
     \item \textbf{Instituicoes:} tabela que contém as informações referentes as instituições, tais como o nome, cnpj, endereço e cidade. O campo cnpj deve ser único. A chave estrangeira administrador\_id é relacionada ao usuário que criou ou foi transferida a administração da instituição.
     
-    \item \textbf{Categorias :} tabela criada com intuito de categorizar os eventos de modo que seja facilitada a busca na aplicação.
+    \item \textbf{Categorias:} tabela criada com intuito de categorizar os eventos de modo que seja facilitada a busca na aplicação.
     
     \item \textbf{Tipo\_Eventos:} tabela criada com intuito de sub-categorizar os eventos de modo que seja facilitada a busca na aplicação
     
@@ -97,17 +135,15 @@ O banco de dados foi planejado criando-se a partir das funcionalidades da aplica
     
     \item \textbf{Modelo\_Certificados:} a tabela para os modelos de certificado deve conter os campos de título, nome\_assinatura e cargo\_assinatura como obrigatórios, sendo textos. Os campos de imagem\_fundo, assinatura e logo devem ser preenchidos com as urls das imagens armazenadas no Firebase. A chave estrangeira instituicao\_id se refere a instituição que criou tal modelo.
     
-    \item \textbf{Apresentadores :} os apresentadores podem ser externos à aplicação, então contêm um nome e email. Caso o email seja vinculado a um usuário, será atribuído um id de usuário nesta tabela.
+    \item \textbf{Apresentadores:} os apresentadores podem ser externos à aplicação, então contêm um nome e email. Caso o email seja vinculado a um usuário, será atribuído um id de usuário nesta tabela.
     
     \item \textbf{Tipo\_Imagens:} descreve o tipo de imagem que está no evento, podendo ser banner ou outros.
     
     \item \textbf{Imagens:} tabela que armazena a url da imagem contida no Firebase, juntamente com as chaves estrangeiras de seu tipo e do evento que foi vinculada.
     
-    \item \textbf{Atividades:} 
+    \item \textbf{Atividades:} as atividades são descritas pelo seu nome, a data que irá ocorrer, assim como horário de início e término como obrigatório. Descrição e local podem ser inseridos posteriormente. A url também pode ser inserida posteriormente, mas é necessário que tenha a url para que a atividade ocorre, sendo que é com base nela que os participantes entraram. As chaves estrangeiras são: evento\_id, referenciando o evento da atividade e a tipo\_atividade\_id que é sobre o tipo de atividade selecionado.
     
     \item \textbf{Certificados:} esta tabela descreve todas as informações presentes do evento, atividade, data, e as horas da atividade. Deve conter um modelo de certificado para que possa se basear as informações. O certificado pode ser para um participante, que deve ser usuário da aplicação, ou um apresentador, podendo este ser externo a aplicação.
-    
-    \item \textbf{Certificados :}
     
 \end{itemize}
 
@@ -176,20 +212,12 @@ Além disso, por fazerem parte de uma API (explicada com mais detalhes posterior
     }
 \end{lstlisting}
 
-%\begin{figure}[h]
-  %  \caption{\label{orm}Exemplo do ORM}
-   % \vspace{5pt}
-%    \centering
- %   \includegraphics[scale=.5]{ORM.png}
-  %  \vspace{5pt}
-   % \legend{Fonte: Próprio autor}
-%\end{figure}
-
 Dado o exemplo da busca e seus filtros, a validação de dados na inserção e atualização de dados é essencial para que não haja dados inseridos de maneira indevida e que haja um padrão nas requisições. Isto tudo é feito diretamente no Laravel, que validará antes mesmo do banco de dados e retornará caso haja algum erro.
+
 \section{Operações API}
 A API foi feita no Laravel, respeitando os padrões estabelecidos pela interface REST. Ou seja, por meio de requisições HTTP do tipo GET, POST e DELETE é possível acessar todas as rotas do back-end. Em diversas destas não será possível acessar sem que haja uma autenticação feita por meio do JWT, que irá validar se há permissão de acesso, e isto determina caso o usuário esteja logado, assim como seu nível de acesso dentro de sua hierarquia. 
 
-Dito isso, as rotas foram criadas em grupos para atenderem as necessidades e criar-se uma organização para cada requisição, então foram organizadas, conforme a figura \ref{rotas_laravel}. Esta demonstra cada um dos agrupamentos, sendo estes aqueles que contém todas as rotas para modelos, assim como para determinadas funcionalidades do sistema. O grupo de eventos terá todas as rotas pertencentes a eventos, sendo estas demonstradas na figura \ref{grupo_rotas}, e conforme pode ser visualizado possuem autenticação e validação do que pode ser escrito na url para que possa ser acessada devidamente. 
+As rotas foram criadas em grupos para atenderem as necessidades e criar-se uma organização para cada requisição, então foram organizadas, conforme o código \ref{rotas_laravel}. Este demonstra cada um dos agrupamentos, sendo estes aqueles que contém todas as rotas para modelos, assim como para determinadas funcionalidades do sistema. O grupo de eventos tem todas as rotas pertencentes a eventos  e conforme pode ser visualizado possuem autenticação e validação do que pode ser escrito na url para que possa ser acessada devidamente. 
 
 \begin{lstlisting}[language=PHP, caption = {Grupo de rotas} \label{rotas_laravel}]
  Route::group(["prefix" => "eventos"], function () {
@@ -215,29 +243,29 @@ Diferentemente do webservice criado no Laravel, a estruturação do frontend no 
     \caption{\label{estrutura_next}Estrutura do projeto do Next.js}
     \vspace{5pt}
     \centering
-    \includegraphics[scale=.35]{estrutura_next.png}
+    \includegraphics[scale=.45]{estrutura_next.png}
     \vspace{5pt}
     \legend{Fonte: Próprio autor}
 \end{figure}
 
 Por meio dos componentes, mostrados na estrutura da figura \ref{componentes} é possível a reutilização do código-fonte para diversos layouts, como por exemplo o componente NavBar, o qual é utilizado em diversas páginas, tornando-as padronizadas. Com isto, cada componente, também, terá seu estilo por meio de um arquivo de módulo do CSS, que estende os estilos globais, podendo sobrepô-los. Portanto, cada componente terá sua finalidade pré-definida, podendo ser reutilizada caso sirva o propósito.
+
 \begin{figure}[H]
     \caption{\label{componentes}Estrutura dos componentes}
     \vspace{5pt}
     \centering
-    \includegraphics[scale=.4]{componentes.png}
+    \includegraphics[scale=.45]{componentes.png}
     \vspace{5pt}
     \legend{Fonte: Próprio autor}
 \end{figure}
 
-
 \section{Rotas Next.js}
 Em relação as rotas, serão as páginas a serem acessadas pelo usuário. Dito isso, estas deverão validar, caso necessário, se o usuário está logado por meio de uma requisição ao back-end. Além disso, estas devem requisitar diversas informações para que possam ser exibidas nas páginas e preencherem os dados necessários de cada componente. Conforme estruturação presente na figura \ref{pages}, cada página tem seu nome e sua estruturação interna, podendo ter sub-rotas, que serão chamadas dentro da pasta. Esta regra vale para todas as pastas presentes, com exceção das 404 (a qual está destinada a páginas não encontradas, ou seja, caso seja digitada uma url dentro do domínio que não seja pertencente a esta lista, irá a chamar, visto que é uma página customizada) e a 403 (que determina um recurso não possível de ser acessado para determinado usuário).
-\begin{figure}[h]
+\begin{figure}[H]
     \caption{\label{pages}Estruturação de páginas no Next.js}
     \vspace{5pt}
     \centering
-    \includegraphics[scale=.4]{pages.png}
+    \includegraphics[scale=.6]{pages.png}
     \vspace{5pt}
     \legend{Fonte: Próprio autor}
 \end{figure}
@@ -245,4 +273,4 @@ Em relação as rotas, serão as páginas a serem acessadas pelo usuário. Dito 
 \section{Renderização das páginas}
 Dentro das páginas da aplicação, diretamente do Next.js, foram utilizadas ambas as implementações de pré-renderização presentes no framework. Em páginas que podem ter cache, como por exemplo, as páginas individuais de cada evento, principalmente por conterem diversas imagens, além de não necessariamente precisarem estar constantemente sendo atualizadas, sendo estas geradas em tempo de compilação, e tendo em vista que o evento nem seja editado, foi utilizado o método de Static Generation com Incremental Static Regeneration. Ou seja, por todas as páginas serem baseadas nos mesmos componentes, tendo sua diferença apenas os dados requisitados, foi criado um cache para cada um, gerando uma página HTML juntamente com um JSON de dados, para cada das páginas. Isto faz com que o acesso seja mais rápido, e o cache é de um minuto, ou seja, a cada um minuto se o evento for editado e caso haja uma requisição, a página será gerada novamente com base no que foi atualizado em cada uma das páginas desta rota dinâmica.
 
-Além disso, há também a outra implementação de pré-renderização, que é a Server-side rendering, que foi utilizada em páginas, como a de pesquisa dos eventos. A sua utilização se deve ao fato de que esta deve ser geradas constantemente baseada nos filtros que o usuário irá fazer dada a sua necessidade. A página é mais lenta em relação a uma geração estática, porém todo o processamento fica no servidor que está hospedada a aplicação, deixando com o navegador do usuário final apenas com o HTML gerado em tempo de execução dada essa frequência de atualização desta página, por exemplo.
+Há também a outra implementação de pré-renderização, que é a Server-side rendering, que foi utilizada em páginas, como a de pesquisa dos eventos. A sua utilização se deve ao fato de que esta deve ser geradas constantemente baseada nos filtros que o usuário irá fazer dada a sua necessidade. A página é mais lenta em relação a uma geração estática, porém todo o processamento fica no servidor que está hospedada a aplicação, deixando com o navegador do usuário final apenas com o HTML gerado em tempo de execução dada essa frequência de atualização desta página, por exemplo.

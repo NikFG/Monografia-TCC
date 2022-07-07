@@ -20,7 +20,8 @@ Com a utilização de frameworks modernos, foi possível criar uma aplicação w
     \vspace{5pt}
     \legend{Fonte: Próprio autor}
 \end{figure}
-Foi criada uma exibição padrão para cada evento, seguindo o modelo de mockup. Com isto, a aplicação segue um modelo padrão para cada evento, modificando apenas as informações juntamente com as imagens contidas em cada um. Na figura \ref{evento}, é possível ver o detalhamento do evento em si e, juntamente com a figura \ref{atividades} (que estão na mesma página), tem-se completamente os dados para a participação do usuário, juntamente com a descrição completa de quem e o que será apresentado no evento. \\
+Foi criada uma exibição padrão para cada evento, seguindo o modelo de mockup. Com isto, a aplicação segue um modelo padrão para cada evento, modificando apenas as informações juntamente com as imagens contidas em cada um. Na figura \ref{evento}, é possível ver o detalhamento do evento em si e, juntamente com a figura \ref{atividades} (que estão na mesma página), tem-se completamente os dados para a participação do usuário, juntamente com a descrição completa de quem e o que será apresentado no evento. 
+
 \begin{figure}[H]
     \caption{\label{evento}Evento}
     \vspace{5pt}
@@ -53,7 +54,7 @@ A criação do backend que foi realizada apresenta um token JWT para autenticaç
 
 Por se tratar de um framework bem estruturado e organizado, com o Laravel, foi possível criar um padrão para o projeto que apresente funções bem determinadas e cumprindo o requisito de estarem em seu local, como os Controllers tendo as funções de comunicação com o banco de dados, assim como o retorno da requisição por meio de uma resposta em JSON, e as rotas chamando cada uma dessas funções para serem executadas. Portanto, isto facilitou o desenvolvimento, criando-se um padrão pré-determinado e podendo ser expandido ainda mais para projetos em maiores escalas.
 
-O protótipo da aplicação apresenta uma estrutura bem subdividida, contendo o frontend e o backend estruturados pelos seus frameworks, pode ser escalável visando uma aplicação para o mercado FALTA MELHORAR, de acordo com os parâmetros de \citeonline{ALGUEM}.
+O protótipo da aplicação apresenta uma estrutura bem subdividida, contendo o frontend e o backend estruturados pelos seus frameworks, podendo ser escalável.
 
 A geração dinâmica dos certificados é uma característica relevante da aplicação que padroniza em uma instituição como podem ser seus documentos. Os modelos podem ser replicados ou diferentes para cada evento, podendo tornar padrão ou exclusivo para cada uso. A API permite a possibilidade da criação de um aplicativo para smartphones sem a necessidade de refazer ou reestruturar o backend, devido a implementação de tecnologias como o JSON e ser acessível via protocolo HTTP. Os dados na API são protegidos por meio da autenticação fornecida pelo Laravel, ou seja, os dados da aplicação só serão repassados para quem estiver autenticado e com permissão de acesso a determinadas informações por meio do JWT daquele usuário, que tem prazo de validade. 
 

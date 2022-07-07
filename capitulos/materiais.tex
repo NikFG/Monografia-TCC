@@ -28,9 +28,16 @@ O PHP é uma linguagem de script open-source de uso geral, muito utilizada, e es
 \subsection{Laravel}
 Framework é um conjunto de ferramentas, recursos e funcionalidades que visa facilitar e agilizar tarefas mais comuns no desenvolvimento de sistemas, e é criado em uma determinada linguagem de programação. O framework escolhido foi o Laravel, feito com base no PHP, é gratuito e possui código aberto. Este é utilizado no desenvolvimento de sistemas web e seu objetivo é fornecer código e recursos claros, simples e bonitos que ajudem os desenvolvedores a aprender, iniciar e desenvolver rapidamente e escrever um código simples, claro e duradouro \cite{STAUFFER}. A hospedagem do Laravel é suportada por diversos provedores, incluindo o Heroku, que será detalhado nesta seção. 
 
-Este framework foi baseado no padrão de projeto Model, View, Controller (MVC), dividindo a aplicação em três camadas, sendo estas o modelo, que dita as regras de negócio assim como os dados da aplicação; o controle, que realiza a interpretação das entradas do usuário, sendo estas convertidas para as demais camadas, ou seja, fazendo uma chamada para o modelo ou convertendo dados para a visão; e visão, que consiste na exibição de dados para o usuário. 
-FALTA MELHORAR
-\begin{figure}[h]
+O Laravel foi baseado no padrão de projeto Model, View, Controller (MVC), que divide a aplicação em três camadas, sendo estas:
+\begin{itemize}
+    \item \textbf{Modelo:} dita as regras de negócio e os dados da aplicação.
+    \item \textbf{Visão:} exibição dos dados para o usuário.
+    \item \textbf{Controlador:} interpreta as entradas do usuário para as outras camadas de acordo com o que foi solicitado.
+\end{itemize}
+
+A escolha para o projeto se deve ao fato de que, de acordo com a figura \ref{framework_popular}, o Laravel é o framework backend mais popular até março de 2021 segundo dados dos repositórios com mais estrelas do GitHub, e isto se deve a diversas características que estão contidas nele, sendo estas:
+
+\begin{figure}[H]
     \caption{\label{framework_popular}Frameworks backend mais populares}
     \vspace{5pt}
     \centering
@@ -39,7 +46,6 @@ FALTA MELHORAR
     \legend{Fonte: Statistcs and data\cite{STATISTICS}}
 \end{figure}
 
-A escolha para o projeto se deve ao fato de que, de acordo com a figura \ref{framework_popular}, o Laravel é o framework backend mais popular até março de 2021 segundo dados dos repositórios com mais estrelas do GitHub, e isto se deve a diversas características que estão contidas nele, sendo estas:
 \begin{itemize}
     \item \textbf{Roteamento rápido e simples:} é possível criar rotas com segurança e de forma simples, evitando requisições não autorizadas de maneira simples por meio dos verbos GET, POST, PUT e DELETE. Também é possível criar grupos de rotas com permissões de acesso específicas.
     \item \textbf{ORM Eloquent:} este facilita a interação com o banco de dados utilizando cada tabela como um objeto modelo correspondente. Outra facilidade é a forma de interação com as tabelas, que seriam a recuperação de registros do banco de dados, assim como sua inserção, atualização e exclusão.
@@ -131,18 +137,18 @@ Exemplificando a organização das tecnologias utilizadas, a figura \ref{info} d
 
 
 \section{Métodos} \label{metodos}
-Para este projeto, o desenvolvimento será baseado no processo unificado, que propõe etapas as quais são incrementais e interativas, mesmo sendo definido por etapas \cite{SOMMERVILE}. Tais etapas serão definidas por: concepção, elaboração, construção e transição. Por mais que sejam quatro etapas, como foi dito anteriormente, por mais que sejam as quatro bem definidas, são reexecutadas a cada nova melhoria e funcionalidade da aplicação.
+Para este projeto, o desenvolvimento foi baseado no processo unificado, que as etapas são incrementais e interativas, mesmo sendo definido por etapas \cite{SOMMERVILE}. As etapas são definidas por: concepção, elaboração, construção e transição.
 
-A primeira etapa é dada pela concepção, a qual irá levantar o escopo do projeto de forma mais genérica, sendo o caso de uso, que será incrementado a cada nova funcionalidade. Este por sua vez, irá demonstrar como será a interação dos usuários, chamados de atores, com o sistema e suas funcionalidades, que são os casos de uso para cada um. Sendo assim, os atores identificados inicialmente são: supervisor, associado, usuário, visitante e o apresentador, podendo serem vistos no caso de uso representado pela figura \ref{fig_caso_uso}.
+% A primeira etapa é dada pela concepção, a qual irá levantar o escopo do projeto de forma mais genérica, sendo o caso de uso, que será incrementado a cada nova funcionalidade. Este por sua vez, irá demonstrar como será a interação dos usuários, chamados de atores, com o sistema e suas funcionalidades, que são os casos de uso para cada um. Sendo assim, os atores identificados inicialmente são: supervisor, associado, usuário, visitante e o apresentador, podendo serem vistos no caso de uso representado pela figura \ref{fig_caso_uso}.
 
-\begin{figure}[H]
-    \caption{\label{fig_caso_uso}Caso de uso}
-    \vspace{5pt}
-    \centering
-    \includegraphics[scale=.4]{caso de uso.png}
-    \vspace{5pt}
-    \legend{Fonte: Próprio autor}
-\end{figure}
+% \begin{figure}[H]
+    % \caption{\label{fig_caso_uso}Caso de uso}
+    % \vspace{5pt}
+    % \centering
+    % \includegraphics[scale=.4]{caso de uso.png}
+    % \vspace{5pt}
+    % \legend{Fonte: Próprio autor}
+% \end{figure}
 
 Há cinco níveis de acesso ao sistema, sendo estes:
 \begin{itemize}
