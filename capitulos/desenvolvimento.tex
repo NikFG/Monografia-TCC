@@ -118,7 +118,7 @@ Segundo \citeonline{WAZLAWICK}, o caso de uso expandido corresponde ao aprofunda
         
 \end{itemize}
 
-\section{Mokcups}
+\section{Mockups}
 Dados os casos de uso, será possível criar um mockup das telas baseado nestas informações. Ou seja, a criação de telas por meio do Figma possibilitou a visualização e alteração do layout de uma forma simplificada antes de serem implementadas de fato. Dito isso, toda o mockup foi pensado para seguir padrões na interface, como, por exemplo, a barra de navegação está presente em todas as páginas a qual o usuário poderá navegar (com exceções apenas da criação de conta e login). E isto facilita a navegação, e mantém a similaridade da aplicação para o usuário final.  
 
 A figura \ref{home_mockup} demonstra como é a ideia da página inicial, que contém uma barra de navegação, um acesso aos eventos, um acesso à criação de eventos e ao perfil. Haverá, no meio da página, um destaque aos últimos eventos cadastrados na plataforma, podendo ser acessados diretamente desta página.
@@ -198,7 +198,7 @@ O banco de dados foi planejado criando-se a partir das funcionalidades da aplica
     
     \item \textbf{Tipo\_Atividades:} tabela criada com intuito de categorizar as atividades de modo que seja facilitada a busca na aplicação.
     
-    \item \textbf{Eventos:} tabela que possui os dados do evento, como seu título, expectativa de participantes, banner e uma breve descrição como obrigatórios. Os campos opcionais, como local, descrição podem ser adicionados depois, não sendo obrigatórios. O campo banner é uma URL da imagem armazenada no Firebase. As chaves estrangeiras são definidas pela categoria\_id, tipo\_id (ambas referentes às categorias e tipos escolhidos pelo usuário), instituição\_id e user\_id (ambas referentes ao usuário que criou o evento) e chave modelo\_certificado\_id (não obrigatória para criação do evento, mas obrigatória para criação dos certificados posteriormente).
+    \item \textbf{Eventos:} tabela que possui os dados do evento, como seu título, expectativa de participantes, banner e uma breve descrição como obrigatórios. Os campos opcionais, como local, descrição podem ser adicionados depois, não sendo obrigatórios. O campo banner é uma URL da imagem armazenada no Firebase. As chaves estrangeiras são definidas pela categoria\_id, tipo\_id (ambas referentes às categorias e tipos escolhidos pelo usuário), instituicao\_id e user\_id (ambas referentes ao usuário que criou o evento) e chave modelo\_certificado\_id (não obrigatória para criação do evento, mas obrigatória para criação dos certificados posteriormente).
     
     \item \textbf{Modelo\_Certificados:} a tabela para os modelos de certificado deve conter os campos de título, nome\_assinatura e cargo\_assinatura como obrigatórios, sendo textos. Os campos de imagem\_fundo, assinatura e logo devem ser preenchidos com as URLs das imagens armazenadas no Firebase. A chave estrangeira instituicao\_id se refere a instituição que criou tal modelo.
     
