@@ -4,19 +4,19 @@
 Nesta seção são detalhados os passos e decisões tomadas ao decorrer do período de desenvolvimento deste trabalho. São apresentadas as etapas de implementação e integração com outras soluções utilizadas, assim como a execução e comparação dos resultados obtidos.
 
 \section{Casos de uso}
-Inicialmente foi desenvolvido o caso de uso expandido do sistema, baseando-se no que foi demonstrado por \citeonline{SOMMERVILE} do modelo UML, como forma tanto de documentação, assim como planejamento do protótipo. Todas as interações do sistema com seus usuários foram pré-determinadas, assim como a definição e organização de requisitos funcionais no sistema dado seu contexto para modelagem do fluxo básico dos eventos diretamente nestes diagramas. O caso de uso, mostra neste contexto o escopo da aplicação, trazendo as principais funcionalidades em que foram desenvolvidas no protótipo, limitando-se a eventos educacionais online. Os cenários de interação entre os atores por meio do caso de uso determinado definem principalmente como deveria ser planejado e até qual ponto pode ser utilizado por cada um deles, respeitando sua hierarquia. A figura \ref{caso_uso_1} demonstra o primeiro caso de uso planejado para o protótipo.
+Inicialmente foi desenvolvido o caso de uso expandido do sistema, baseando-se no que foi demonstrado por \citeonline{SOMMERVILE} do modelo UML, como forma tanto de documentação, assim como planejamento do protótipo. Todas as interações do sistema com seus usuários foram pré-determinadas, assim como a definição e organização de requisitos funcionais no sistema dado seu contexto para modelagem do fluxo básico dos eventos diretamente nestes diagramas. O caso de uso mostra, neste contexto, o escopo da aplicação, trazendo as principais funcionalidades desenvolvidas no protótipo, limitando-se a eventos educacionais online. Os cenários de interação entre os atores no diagrama de caso de uso determinado definem principalmente como deveria ser planejado e até qual ponto pode ser utilizado por cada um deles, respeitando sua hierarquia. A figura \ref{caso_uso_1} demonstra o primeiro caso de uso planejado para o protótipo.
+
+Com base nesse diagrama, e sua devida explicação, foi possível traçar uma rota de desenvolvimento por meio do processo unificado. No início foi pensado em apenas dois atores, sendo estes um administrador e um usuário comum, como mostra a imagem. Nisto, foram desenvolvidas funcionalidades básicas para estes, contendo a primeira iteração, sem os demais. 
 
 \begin{figure}[H]
     \caption{\label{caso_uso_1}Primeiro caso de uso}
     \vspace{5pt}
     \centering
-    \includegraphics[scale=.6]{Caso de uso TCC1.jpeg}
+    \includegraphics[width=25cm,height=11cm,keepaspectratio]{Caso de uso TCC1.jpeg}
     \vspace{5pt}
     \legend{Fonte: Próprio autor}
 \end{figure}
 
-
-Com base nesse diagrama, e sua devida explicação, foi possível traçar uma rota de desenvolvimento por meio do processo unificado. No início foi pensado em apenas dois atores, sendo estes um administrador e um usuário comum, como mostra a imagem. Nisto, foram desenvolvidas funcionalidades básicas para estes, contendo a primeira iteração, sem os demais. 
 
 Para a segunda iteração, já há mais atores contando com a inclusão do associado, sendo intermediário entre usuário e supervisor. Além disso, e novas funcionalidades pensadas para a aplicação, sendo estas a gerência da lista de participantes e a gerência dos eventos apenas para determinado usuários (sendo estas relacionadas ao associado) conforme demonstrado na figura \ref{caso_uso_2}.
 
@@ -24,7 +24,7 @@ Para a segunda iteração, já há mais atores contando com a inclusão do assoc
     \caption{\label{caso_uso_2}Segundo caso de uso}
     \vspace{5pt}
     \centering
-    \includegraphics[scale=.7]{Caso de uso TCC2.jpeg}
+    \includegraphics[width=25cm,height=11cm,keepaspectratio]{Caso de uso TCC2.jpeg}
     \vspace{5pt}
     \legend{Fonte: Próprio autor}
 \end{figure}
@@ -119,7 +119,7 @@ Segundo \citeonline{WAZLAWICK}, o caso de uso expandido corresponde ao aprofunda
 \end{itemize}
 
 \section{Mockups}
-Dados os casos de uso, será possível criar um mockup das telas baseado nestas informações. Ou seja, a criação de telas por meio do Figma possibilitou a visualização e alteração do layout de uma forma simplificada antes de serem implementadas de fato. Dito isso, todo o mockup foi pensado para seguir padrões na interface, como, por exemplo, a barra de navegação está presente em todas as páginas a qual o usuário poderá navegar (com exceções apenas da criação de conta e login). E isto facilita a navegação, e mantém a similaridade da aplicação para o usuário final.  
+Dados os casos de uso, será possível criar um mockup das telas baseado nestas informações. Ou seja, a criação de telas por meio do Figma possibilitou a visualização e alteração do layout de uma forma simplificada antes de serem implementadas de fato. Dito isso, todo o mockup foi pensado para seguir padrões na interface, como, por exemplo, a barra de navegação está presente em todas as páginas a qual o usuário poderá navegar (com exceções apenas da criação de conta e login). E isto pode facilitar a navegação, mantendo a similaridade da aplicação para o usuário final.  
 
 A figura \ref{home_mockup} demonstra como é a ideia da página inicial, que contém uma barra de navegação, um acesso aos eventos, um acesso à criação de eventos e ao perfil. Haverá, no meio da página, um destaque aos últimos eventos cadastrados na plataforma, podendo ser acessados diretamente desta página.
 \begin{figure}[H]
@@ -151,7 +151,7 @@ A terceira parte do mockup é a tela de pesquisa de eventos, como mostra a figur
     \legend{Fonte: Próprio autor}
 \end{figure}
 
-Por fim, a figura \ref{form_mockup}, mostra como serão todos os formulários do sistema, sendo este utilizado conforme a necessidade da tela, como a criação de eventos ou criação de usuário. Isto se deve para melhorar tal interação, tornando padronizado e fazendo com que não seja necessário retrabalho de aprendizagem para cada página contida.
+Por fim, a figura \ref{form_mockup}, mostra como serão todos os formulários do sistema, sendo este utilizado conforme a necessidade da tela, como a criação de eventos ou criação de usuário. 
 \begin{figure}[H]
     \caption{\label{form_mockup}Mockup da tela de formulário padrão}
     \vspace{5pt}
@@ -168,7 +168,7 @@ A estruturação segue um modelo de distribuição vertical, o qual prevê a dis
 
 
 \section{Modelo de banco de dados}
-Nesta etapa foram criados modelos os quais tiveram embasamento no diagrama de Caso de Uso, assim como nos mockups, visto que deve atender os requisitos predeterminados. Foram criados os modelos conforme figura \ref{modelo_banco}, que determina cada classe do banco de dados feita no Laravel para poder representar os relacionamentos entre as tabelas do MySQL, além de determinar cada atributo das classes. Estes foram feitos com base na figura \ref{models_projeto}, que representa o diagrama de entidade e relacionamento do banco de dados.
+Nesta etapa foram criados modelos os quais tiveram embasamento no diagrama de Caso de Uso, assim como nos mockups, visto que devem atender os requisitos predeterminados. Foram criados os modelos conforme figura \ref{models_projeto}, que determina cada classe do banco de dados feita no Laravel para poder representar os relacionamentos entre as tabelas do MySQL, além de determinar cada atributo das classes. Estes foram feitos com base na figura \ref{modelo_banco}, que representa o diagrama de entidade e relacionamento do banco de dados.
 \begin{figure}[H]
     \caption{\label{models_projeto}Classes de modelo}
     \vspace{5pt}
@@ -215,105 +215,107 @@ O banco de dados foi planejado criando-se a partir das funcionalidades da aplica
 \end{itemize}
 
 \section{Controllers}
-Por meio dos controladores do Laravel, é possível manipular as operações do banco de dados, e para haver uma organização e mantenha o padrão MVC, foram criados controladores específicos para cada modelo, sendo cada um atribuído a responsabilidade do modelo correspondente e essa estruturação pode ser vista na figura \ref{controllers}, a qual demonstra cada um dos controladores.
-\begin{figure}[H]
-    \caption{\label{controllers}Controladores}
-    \vspace{5pt}
-    \centering
-    \includegraphics[scale=.5]{controllers.png}
-    \vspace{5pt}
-    \legend{Fonte: Próprio autor}
-\end{figure}
+Por meio dos controladores do Laravel, é possível manipular as operações do banco de dados, e para haver uma organização e mantenha o padrão MVC, foram criados controladores específicos para cada modelo, sendo cada um atribuído a responsabilidade do modelo correspondente.
+% e essa estruturação pode ser vista na figura \ref{controllers}, a qual demonstra cada um dos controladores.
+% \begin{figure}[H]
+%     \caption{\label{controllers}Controladores}
+%     \vspace{5pt}
+%     \centering
+%     \includegraphics[scale=.5]{controllers.png}
+%     \vspace{5pt}
+%     \legend{Fonte: Próprio autor}
+% \end{figure}
 
-Além disso, por fazerem parte de uma API (explicada com mais detalhes posteriormente), cada operação deve retornar um JSON, com o código de status de retorno do HTTP. No trecho de código, visto no código \ref{orm}, é um exemplo da função a qual recebe uma requisição determinando cada um dos filtros, e então por meio do \textit{eloquent ORM}, realizando a \textit{query} no banco de dados e no fim retornando um JSON com os dados, padronizando, então, a maneira de se receber e retornar os dados.
-\begin{lstlisting}[language=PHP, caption = {Exemplo do ORM} \label{orm}]
- public function index(Request $request): JsonResponse {
-        $eventos = Evento::query()->with(['atividades' => function ($query) {
-            $query->orderBy('data')
-            ->orderBy('horario_inicio')
-            ->orderBy('horario_fim')
-            ->orderBy("nome");
-        }, 'categoria', 'instituicao'])
-            ->whereHas('atividades')
-            ->orderBy('created_at', 'desc');
+Além disso, por fazerem parte de uma API (explicada com mais detalhes posteriormente), cada operação deve retornar um JSON, com o código de status de retorno do HTTP. Um exemplo possível nos controladores, são suas função que recebem uma requisição com determinados filtros e então, por meio do \textit{eloquent ORM}, realiza a \textit{query} no banco de dados e no fim retorna um JSON com os dados, padronizando, então, a maneira de se receber e retornar os dados.
+% \begin{lstlisting}[language=PHP, caption = {Exemplo do ORM} \label{orm}]
+%  public function index(Request $request): JsonResponse {
+%         $eventos = Evento::query()->with(['atividades' => function ($query) {
+%             $query->orderBy('data')
+%             ->orderBy('horario_inicio')
+%             ->orderBy('horario_fim')
+%             ->orderBy("nome");
+%         }, 'categoria', 'instituicao'])
+%             ->whereHas('atividades')
+%             ->orderBy('created_at', 'desc');
 
-        if ($request->titulo != null) {
-            $queryLower = trim(strtolower($request->titulo));
-            $eventos->where(function ($query) use ($queryLower) {
-                $query->where(DB::raw('lower(nome)'), 'like', '%' . $queryLower . '%')
-                    ->orWhere(DB::raw('lower(breve_descricao)'), 'like', '%' . $queryLower . '%');
-            });
-        }
+%         if ($request->titulo != null) {
+%             $queryLower = trim(strtolower($request->titulo));
+%             $eventos->where(function ($query) use ($queryLower) {
+%                 $query->where(DB::raw('lower(nome)'), 'like', '%' . $queryLower . '%')
+%                     ->orWhere(DB::raw('lower(breve_descricao)'), 'like', '%' . $queryLower . '%');
+%             });
+%         }
 
-        if ($request->cat != null) {
-            $eventos->whereRelation('categoria', 'categorias.id', '=', $request->cat);
-        }
+%         if ($request->cat != null) {
+%             $eventos->whereRelation('categoria', 'categorias.id', '=', $request->cat);
+%         }
 
-        if ($request->instituicao != null) {
-            $eventos->whereRelation('instituicao', 'instituicoes.id', $request->instituicao);
-        }
+%         if ($request->instituicao != null) {
+%             $eventos->whereRelation('instituicao', 'instituicoes.id', $request->instituicao);
+%         }
 
-        if ($request->dataInicio != null) {
-            if ($request->dataFim != null) {
-                $eventos->whereHas('atividades', function ($q) use ($request) {
-                    $q->whereBetween('data', [$request->dataInicio, $request->dataFim]);
-                });
-            } else {
-                $eventos->whereRelation('atividades', 'atividades.data', $request->dataInicio);
-            }
-        }
+%         if ($request->dataInicio != null) {
+%             if ($request->dataFim != null) {
+%                 $eventos->whereHas('atividades', function ($q) use ($request) {
+%                     $q->whereBetween('data', [$request->dataInicio, $request->dataFim]);
+%                 });
+%             } else {
+%                 $eventos->whereRelation('atividades', 'atividades.data', $request->dataInicio);
+%             }
+%         }
 
-        if ($request->horarioInicio != null) {
-            $eventos->whereHas('atividades', function ($q) use ($request) {
-                $q->whereTime('atividades.horario_inicio', '>=', $request->horarioInicio);
-            });
-        }
+%         if ($request->horarioInicio != null) {
+%             $eventos->whereHas('atividades', function ($q) use ($request) {
+%                 $q->whereTime('atividades.horario_inicio', '>=', $request->horarioInicio);
+%             });
+%         }
 
-        if ($request->horarioFim != null) {
-            $eventos->whereHas('atividades', function ($q) use ($request) {
-                $q->whereTime('atividades.horario_fim', '<=', $request->horarioFim);
-            });
-        }
+%         if ($request->horarioFim != null) {
+%             $eventos->whereHas('atividades', function ($q) use ($request) {
+%                 $q->whereTime('atividades.horario_fim', '<=', $request->horarioFim);
+%             });
+%         }
 
-        return response()->json($eventos->paginate(20));
-    }
-\end{lstlisting}
+%         return response()->json($eventos->paginate(20));
+%     }
+% \end{lstlisting}
 
 Dado o exemplo da busca e seus filtros, a validação de dados na inserção e atualização de dados é essencial para não haver dados inseridos de maneira indevida e que haja um padrão nas requisições. Isto tudo é feito diretamente no Laravel, que validará antes mesmo do banco de dados e retornará caso haja algum erro.
 
 \section{Operações API}
 A API foi feita no Laravel, respeitando os padrões estabelecidos pela interface REST. Ou seja, por meio de requisições HTTP do tipo GET, POST e DELETE é possível acessar todas as rotas do \textit{backend}. Em diversas destas não será possível acessar sem que haja uma autenticação feita por meio do JWT, que irá validar se há permissão de acesso, e isto determina caso o usuário esteja logado, assim como seu nível de acesso dentro de sua hierarquia. 
 
-As rotas foram criadas em grupos para atenderem as necessidades e criar-se uma organização para cada requisição, então foram organizadas, conforme o código \ref{rotas_laravel}. Este demonstra cada um dos agrupamentos, sendo estes aqueles que contém todas as rotas para modelos, assim como para determinadas funcionalidades do sistema. O grupo de eventos tem todas as rotas pertencentes a eventos  e conforme pode ser visualizado possuem autenticação e validação do que pode ser escrito na URL para poder ser acessada devidamente. 
+As rotas foram criadas em grupos para atenderem as necessidades e criar-se uma organização para cada requisição. Há agrupamentos para cada módulo da aplicação, sendo aqueles que contém todas as rotas para os modelos, assim como para determinadas funcionalidades do sistema. O grupo de eventos, por exemplo, tem todas as rotas pertencentes a eventos e possui autenticação e validação do que pode ser escrito na URL para poder ser acessada devidamente pelo \textit{frontend}. 
 
-\begin{lstlisting}[language=PHP, caption = {Grupo de rotas} \label{rotas_laravel}]
- Route::group(["prefix" => "eventos"], function () {
-    Route::get("/", [EventoController::class, 'index']);
-    Route::get("/{id}", [EventoController::class, 'show'])->where('id', '[0-9]+');
-    Route::get("/categorias/{id}", [EventoController::class, 'porCategoria'])->where('id', '[0-9]+');
+% \begin{lstlisting}[language=PHP, caption = {Grupo de rotas} \label{rotas_laravel}]
+%  Route::group(["prefix" => "eventos"], function () {
+%     Route::get("/", [EventoController::class, 'index']);
+%     Route::get("/{id}", [EventoController::class, 'show'])->where('id', '[0-9]+');
+%     Route::get("/categorias/{id}", [EventoController::class, 'porCategoria'])->where('id', '[0-9]+');
 
-    Route::get('/user', [EventoController::class, 'eventos_participados'])->middleware('role:usuario');
-    Route::post("/ingressos", [EventoController::class, 'compraIngresso'])->middleware('role:usuario');
-    Route::get('/{id}/user/atividades', [EventoController::class, 'atividades_participadas'])->middleware('role:usuario');
+%     Route::get('/user', [EventoController::class, 'eventos_participados'])->middleware('role:usuario');
+%     Route::post("/ingressos", [EventoController::class, 'compraIngresso'])->middleware('role:usuario');
+%     Route::get('/{id}/user/atividades', [EventoController::class, 'atividades_participadas'])->middleware('role:usuario');
 
-    Route::get("/criados", [EventoController::class, 'eventos_criados'])->can('gerenciar_evento');
-    Route::post("/store", [EventoController::class, 'store'])->can('gerenciar_evento');
-    Route::post("/update/{id}", [EventoController::class, 'update'])->can('gerenciar_evento');
-    Route::delete("/{id}", [EventoController::class, 'destroy'])->can('gerenciar_evento');
-    Route::post("/{id}/uploadImagens", [EventoController::class, 'upload_imagens'])->can('gerenciar_evento')->where('id', '[0-9]+');
-})
-\end{lstlisting}
+%     Route::get("/criados", [EventoController::class, 'eventos_criados'])->can('gerenciar_evento');
+%     Route::post("/store", [EventoController::class, 'store'])->can('gerenciar_evento');
+%     Route::post("/update/{id}", [EventoController::class, 'update'])->can('gerenciar_evento');
+%     Route::delete("/{id}", [EventoController::class, 'destroy'])->can('gerenciar_evento');
+%     Route::post("/{id}/uploadImagens", [EventoController::class, 'upload_imagens'])->can('gerenciar_evento')->where('id', '[0-9]+');
+% })
+% \end{lstlisting}
 
 \section{Componentes}
-Diferentemente do \textit{webservice} criado no Laravel, a estruturação do \textit{frontend} no Next.js é feito por meio de componentes, e por utilizar o Typescript, há a tipagem em variáveis que auxilia o desenvolvedor nos parâmetros a serem passados entre os componentes do projeto. Na figura \ref{estrutura_next} é possível observar a estruturação geral do projeto, dividido em componentes, páginas, imagens, tipos, utilitários e a configuração do Firebase.
-\begin{figure}[H]
-    \caption{\label{estrutura_next}Estrutura do projeto do Next.js}
-    \vspace{5pt}
-    \centering
-    \includegraphics[scale=.45]{estrutura_next.png}
-    \vspace{5pt}
-    \legend{Fonte: Próprio autor}
-\end{figure}
+Diferentemente do \textit{webservice} criado no Laravel, a estruturação do \textit{frontend} no Next.js é feito por meio de componentes, e por utilizar o Typescript, há a tipagem em variáveis que auxilia o desenvolvedor nos parâmetros a serem passados entre os componentes do projeto.
+% Na figura \ref{estrutura_next} é possível observar a estruturação geral do projeto, dividido em componentes, páginas, imagens, tipos, utilitários e a configuração do Firebase.
+% \begin{figure}[H]
+%     \caption{\label{estrutura_next}Estrutura do projeto do Next.js}
+%     \vspace{5pt}
+%     \centering
+%     \includegraphics[scale=.45]{estrutura_next.png}
+%     \vspace{5pt}
+%     \legend{Fonte: Próprio autor}
+% \end{figure}
 
 Por meio dos componentes, mostrados na estrutura da figura \ref{componentes} é possível a reutilização do código-fonte para diversos layouts, como, por exemplo, o componente NavBar, o qual é utilizado em diversas páginas, tornando-as padronizadas. Com isto, cada componente, também, terá seu estilo por meio de um arquivo de módulo do CSS, que estende os estilos globais, podendo sobrepô-los. Portanto, cada componente terá sua finalidade pré-definida, podendo ser reutilizada caso sirva o propósito.
 
@@ -338,6 +340,8 @@ Em relação às rotas, serão as páginas a serem acessadas pelo usuário. Dito
 \end{figure}
 
 \section{Renderização das páginas}
-Dentro das páginas da aplicação, diretamente do Next.js, foram utilizadas ambas as implementações de pré-renderização presentes no framework. Em páginas que podem ter cache, como, por exemplo, as páginas individuais de cada evento, principalmente por conterem diversas imagens, além de não necessariamente precisarem estar sendo constantemente atualizadas, sendo estas geradas em tempo de compilação, e tendo em vista que o evento nem seja editado, foi utilizado o método de \textit{Static Generation} com \textit{Incremental Static Regeneration}. Ou seja, por todas as páginas serem baseadas nos mesmos componentes, tendo sua diferença apenas os dados requisitados, foi criado um cache para cada um, gerando uma página HTML com um JSON de dados, para cada uma das páginas. Isto faz com que o acesso seja mais rápido, e o cache é de um minuto, ou seja, a cada um minuto se o evento for editado e caso haja uma requisição, a página será gerada novamente com base no que foi atualizado em cada uma das páginas desta rota dinâmica.
+O método de \textit{Static Generation} foi utilizado nas páginas que não precisam de qualquer atualização do banco de dados. Isto causa mais rapidez na navegação, devido a sua geração estar envolvida apenas um arquivo de texto HTML, e não precisar esperar a compilação do JavaScript. A página utilizada para criar eventos foi feita com base neste modelo de renderização, visto que não haverão mudanças de dados a medida que o sistema for utilizado (sendo a única exceção ao gerar uma nova versão da aplicação).
 
-Há também a outra implementação de pré-renderização, sendo a \textit{Server-side rendering}, utilizada em páginas, como a de pesquisa dos eventos. A sua utilização se deve ao fato de que esta deve ser geradas constantemente baseada nos filtros que o usuário irá fazer dada a sua necessidade. A página é mais lenta em relação a uma geração estática, porém todo o processamento fica no servidor que está hospedada a aplicação, deixando com o navegador do usuário final apenas com o HTML gerado em tempo de execução dada essa frequência de atualização desta página, por exemplo.
+Há também a outra implementação de pré-renderização, sendo a \textit{Server-side rendering}, utilizada em páginas, como a de pesquisa dos eventos. A sua utilização se deve ao fato de que esta deve ser geradas constantemente baseada nos filtros que o usuário irá fazer. Por estar hospedada apenas no servidor, a página terá uma lentidão se comparada as que utilizam os métodos estáticos, mas garante que as informações do banco de dados estarão atualizadas para exibição do usuário a cada requisição feita.
+
+Nas páginas que não precisaram estar constantemente atualizadas, foi utilizado o recurso do Next.js de \textit{Incremental Static Regeneration}, que guarda seus dados como armazenamento temporário (gerando um \textit{cache}). Um exemplo são as páginas de cada evento, que seguem o requisito de atualização não tão frequente, sendo geradas sob demanda. Ou seja, por todas as páginas serem baseadas nos mesmos componentes, diferindo apenas nos dados requisitados, foi criado um \textit{cache} para cada um, gerando uma página HTML com um JSON de dados, para cada uma das páginas. Isto faz com que o acesso seja mais rápido, e o \textit{cache} é de um minuto, ou seja, a cada um minuto se o evento for editado e caso haja uma requisição, a página será gerada novamente com base no que foi atualizado em cada uma das páginas desta rota dinâmica.
